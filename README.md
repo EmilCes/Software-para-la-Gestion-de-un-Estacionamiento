@@ -3,3 +3,9 @@ Proyecto para la materia de Procesos de Ingeniería en Software. Este proyecto e
 
 # Documento 
 https://docs.google.com/document/d/1Bi82gS_yAvme2-JB39cFpS_e4gfpbMBStzpoFaiQxTY/edit?usp=sharing
+
+#Casos de Uso
+1. CU01 Configurar Precios ()
+2. CU02 Asignar Espacio ()
+3. CU03 Cobrar ()
+4. CU02 Registrar Tarjeta ()
