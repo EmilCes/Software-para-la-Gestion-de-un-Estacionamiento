@@ -9,3 +9,7 @@ https://docs.google.com/document/d/1Bi82gS_yAvme2-JB39cFpS_e4gfpbMBStzpoFaiQxTY/
 2. CU02 Asignar Espacio (Cesar)
 3. CU03 Administrar Cobro (Erick)
 4. CU04 Administrar Tarjetas (Jesus)
+
+# Cronograma
+
+![Cronograma](https://github.com/EmilCes/Software-para-la-Gestion-de-un-Estacionamiento/assets/50472267/03325cd0-60cb-4cc5-895d-4f922bcd6f49)
