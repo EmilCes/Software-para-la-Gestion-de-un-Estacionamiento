@@ -8,4 +8,4 @@ https://docs.google.com/document/d/1Bi82gS_yAvme2-JB39cFpS_e4gfpbMBStzpoFaiQxTY/
 1. CU01 Configurar Precios (Kirbith)
 2. CU02 Asignar Espacio (Cesar)
 3. CU03 Administrar Cobro (Erick)
-4. CU02 Registrar Tarjeta (Jesus)
+4. CU04 Administrar Tarjetas (Jesus)
