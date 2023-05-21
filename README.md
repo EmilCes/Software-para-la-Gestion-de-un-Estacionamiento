@@ -11,5 +11,5 @@ https://docs.google.com/document/d/1Bi82gS_yAvme2-JB39cFpS_e4gfpbMBStzpoFaiQxTY/
 4. CU04 Administrar Tarjetas (Jesus)
 
 # Cronograma
-<img width="446" alt="image" src="https://github.com/EmilCes/Software-para-la-Gestion-de-un-Estacionamiento/assets/50472267/f55cc507-b474-47b7-92b1-62863420e040">
+<img width="515" alt="image" src="https://github.com/EmilCes/Software-para-la-Gestion-de-un-Estacionamiento/assets/50472267/f32d9718-993b-4bd1-9fb1-82994caeaf84">
 
