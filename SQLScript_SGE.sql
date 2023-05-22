@@ -1,0 +1,53 @@
+CREATE DATABASE SGE;
+USE SGE;
+#DROP DATABASE SGE;
+
+CREATE TABLE Tarjetas (
+	IDTarjeta INT AUTO_INCREMENT,
+    PRIMARY KEY(IDTarjeta),
+    estado NVARCHAR(15),
+	IDPrecio INT NOT NULL
+);
+
+CREATE TABLE FechaHorasTarjetas (
+	IDFechaHoraTarjeta INT AUTO_INCREMENT,
+    PRIMARY KEY(IDFechaHoraTarjeta),
+	fechaHoraEntrada DATETIME NOT NULL,
+	fechaHoraSalida DATETIME,
+    IDTarjeta INT NOT NULL
+);
+
+CREATE TABLE Cajones (
+	IDCajón INT AUTO_INCREMENT,
+    PRIMARY KEY(IDCajón),
+    piso INT NOT NULL,
+    estadoSensor NVARCHAR(15) NOT NULL,
+    tipoVehiculo NVARCHAR(10) NOT NULL,
+    IDTarjeta INT
+);
+
+CREATE TABLE Multas (
+	IDMulta INT AUTO_INCREMENT,
+    PRIMARY KEY(IDMulta),
+    motivo NVARCHAR(100),
+    fecha DATETIME NOT NULL,
+    IDTarjeta INT,
+    IDPrecio INT NOT NULL
+);
+
+CREATE TABLE Precios (
+	IDPrecio INT AUTO_INCREMENT,
+    PRIMARY KEY(IDPrecio),
+    descripción NVARCHAR(40) NOT NULL,
+    cantidad DECIMAL NOT NULL
+);
+
+#CONSTRAINTS
+ALTER TABLE Tarjetas ADD CONSTRAINT FK_Tarjeta_Precio FOREIGN KEY(IDPrecio) REFERENCES Precios(IDPrecio) ON DELETE CASCADE;
+
+ALTER TABLE FechaHorasTarjetas ADD CONSTRAINT FK_FechaHora_Tarjeta FOREIGN KEY(IDTarjeta) REFERENCES Tarjetas(IDTarjeta) ON DELETE CASCADE;
+
+ALTER TABLE Cajones ADD CONSTRAINT FK_Cajón_Tarjeta FOREIGN KEY(IDTarjeta) REFERENCES Tarjetas(IDTarjeta) ON DELETE CASCADE;
+
+ALTER TABLE Multas ADD CONSTRAINT FK_Multa_Tarjeta FOREIGN KEY(IDTarjeta) REFERENCES Tarjetas(IDTarjeta) ON DELETE CASCADE;
+ALTER TABLE Multas ADD CONSTRAINT FK_Multa_Precio FOREIGN KEY(IDPrecio) REFERENCES Precios(IDPrecio) ON DELETE CASCADE; 
