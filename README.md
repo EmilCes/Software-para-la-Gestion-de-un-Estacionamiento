@@ -13,3 +13,4 @@ https://docs.google.com/document/d/1Bi82gS_yAvme2-JB39cFpS_e4gfpbMBStzpoFaiQxTY/
 # Cronograma
 <img width="515" alt="image" src="https://github.com/EmilCes/Software-para-la-Gestion-de-un-Estacionamiento/assets/50472267/f32d9718-993b-4bd1-9fb1-82994caeaf84">
 
+![Diagrama de Casos de Uso](https://github.com/EmilCes/Software-para-la-Gestion-de-un-Estacionamiento/assets/121887458/ba3c30ce-519d-4f96-aed1-a54d29a0c305)
