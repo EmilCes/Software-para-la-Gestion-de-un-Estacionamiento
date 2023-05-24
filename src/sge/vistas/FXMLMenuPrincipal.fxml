@@ -74,8 +74,32 @@
                <center>
                   <AnchorPane fx:id="apMenuPrincipal" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
                      <children>
-                        
-                        
+                        <AnchorPane fx:id="apAdministrarCobro" prefHeight="600.0" prefWidth="939.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <AnchorPane prefHeight="200.0" prefWidth="200.0" stylesheets="@css/FXMLMenuPrincipal.css" AnchorPane.bottomAnchor="25.0" AnchorPane.leftAnchor="25.0" AnchorPane.rightAnchor="25.0" AnchorPane.topAnchor="75.0">
+                                 <styleClass>
+                                    <String fx:value="white-bg" />
+                                    <String fx:value="shadow" />
+                                 </styleClass>
+                                 <children>
+                                    <TextField layoutX="144.0" layoutY="71.0" />
+                                    <Label layoutX="39.0" layoutY="76.0" text="Numero Tarjeta" />
+                                    <Button layoutX="329.0" layoutY="71.0" mnemonicParsing="false" text="Calcular Cobro" />
+                                    <Pane layoutX="560.0" layoutY="98.0" prefHeight="200.0" prefWidth="200.0" stylesheets="@css/FXMLCobros.css" AnchorPane.bottomAnchor="25.0" AnchorPane.leftAnchor="500.0" AnchorPane.rightAnchor="25.0" AnchorPane.topAnchor="25.0">
+                                       <styleClass>
+                                          <String fx:value="shadow" />
+                                          <String fx:value="white-bg" />
+                                       </styleClass>
+                                    </Pane>
+                                 </children>
+                              </AnchorPane>
+                              <Label layoutX="44.0" layoutY="11.0" text="Administrar Cobro" AnchorPane.bottomAnchor="540.0" AnchorPane.leftAnchor="25.0" AnchorPane.topAnchor="20.0">
+                                 <font>
+                                    <Font size="48.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
                      </children>
                   </AnchorPane>
                </center>

@@ -8,7 +8,7 @@
   </information>
   <resources>
     <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
-    <jar href="SGE.jar" size="15576" download="eager" />
+    <jar href="SGE.jar" size="14084" download="eager" />
     <jar href="lib/fontawesomefx-8.2.jar" size="180341" download="eager" />
     <jar href="lib/mysql-connector-java-5.1.49.jar" size="1006904" download="eager" />
   </resources>
