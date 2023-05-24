@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+<?import de.jensd.fx.glyphs.fontawesome.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1150.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sge.controladores.FXMLMenuPrincipalController">
+   <children>
+      <AnchorPane prefHeight="200.0" prefWidth="200.0">
+         <children>
+            <BorderPane layoutX="224.0" layoutY="36.0" prefHeight="600.0" prefWidth="1100.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <left>
+                  <AnchorPane prefHeight="555.0" prefWidth="211.0" BorderPane.alignment="CENTER">
+                     <children>
+                        <AnchorPane layoutX="-15.0" layoutY="25.0" prefHeight="555.0" prefWidth="211.0" styleClass="nav-form" stylesheets="@css/FXMLMenuPrincipal.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <FontAwesomeIcon fill="WHITE" glyphName="USER" layoutX="69.0" layoutY="125.0" size="7em" />
+                              <Label layoutX="45.0" layoutY="138.0" text="Estacionamiento" textFill="WHITE">
+                                 <font>
+                                    <Font size="17.0" />
+                                 </font>
+                              </Label>
+                              <Label alignment="CENTER" layoutX="5.0" layoutY="160.0" prefHeight="26.0" prefWidth="199.0" text="Parking City" textFill="WHITE">
+                                 <font>
+                                    <Font name="System Bold" size="20.0" />
+                                 </font>
+                              </Label>
+                              <Line endX="100.0" layoutX="106.0" layoutY="195.0" scaleX="0.8" startX="-100.0" stroke="WHITE" />
+                              <Button fx:id="btnCobro" layoutX="16.0" layoutY="254.0" mnemonicParsing="false" onAction="#clicBtnAdministrarCobro" prefHeight="35.0" prefWidth="180.0" styleClass="nav-btn" stylesheets="@css/FXMLMenuPrincipal.css" text="Administrar cobro">
+                                 <graphic>
+                                    <FontAwesomeIcon fill="WHITE" glyphName="MONEY" size="1.5em" />
+                                 </graphic>
+                              </Button>
+                              <Button fx:id="btnTarjetas" layoutX="16.0" layoutY="289.0" mnemonicParsing="false" onAction="#clicBtnAdministrarTarjetas" prefHeight="35.0" prefWidth="180.0" styleClass="nav-btn" stylesheets="@css/FXMLMenuPrincipal.css" text="Administrar Tarjetas">
+                                 <graphic>
+                                    <FontAwesomeIcon fill="WHITE" glyphName="CHECK" size="1.5em" />
+                                 </graphic>
+                              </Button>
+                              <Button layoutX="14.0" layoutY="514.0" mnemonicParsing="false" stylesheets="@css/FXMLMenuPrincipal.css">
+                                 <graphic>
+                                    <FontAwesomeIcon fill="WHITE" glyphName="SIGN_OUT" size="1.5em" />
+                                 </graphic>
+                                 <styleClass>
+                                    <String fx:value="logout" />
+                                    <String fx:value="shadow" />
+                                 </styleClass>
+                              </Button>
+                              <Label layoutX="54.0" layoutY="520.0" text="Salir" textFill="WHITE">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Label>
+                              <Button fx:id="btnEspacios" layoutX="16.0" layoutY="219.0" mnemonicParsing="false" onAction="#clicBtnAsignarEspacios" prefHeight="35.0" prefWidth="180.0" styleClass="nav-btn" stylesheets="@css/FXMLMenuPrincipal.css" text="Asignar Espacios">
+                                 <graphic>
+                                    <FontAwesomeIcon fill="WHITE" glyphName="CAR" size="1.5em" />
+                                 </graphic>
+                              </Button>
+                              <Button fx:id="btnPrecios" layoutX="16.0" layoutY="324.0" mnemonicParsing="false" onAction="#clicBtnConfigurarPrecios" prefHeight="35.0" prefWidth="180.0" styleClass="nav-btn" stylesheets="@css/FXMLMenuPrincipal.css" text="Configurar Precios">
+                                 <graphic>
+                                    <FontAwesomeIcon fill="WHITE" glyphName="GEAR" size="1.5em" />
+                                 </graphic>
+                              </Button>
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </AnchorPane>
+               </left>
+               <center>
+                  <AnchorPane fx:id="apMenuPrincipal" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                     <children>
+                        
+                        
+                     </children>
+                  </AnchorPane>
+               </center>
+            </BorderPane>
+         </children>
+      </AnchorPane>
+   </children>
+</StackPane>

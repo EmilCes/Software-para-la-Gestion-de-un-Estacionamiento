@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.net.*?>
 <?import de.jensd.fx.glyphs.fontawesome.*?>
 <?import javafx.scene.shape.*?>
 <?import javafx.scene.text.*?>
@@ -14,11 +15,11 @@
    <children>
       <Pane maxHeight="510.0" maxWidth="400.0" minHeight="510.0" minWidth="400.0" prefHeight="510.0" prefWidth="400.0" style="-fx-background-color: White;">
          <children>
-            <TextField fx:id="tfUsuario" layoutX="93.0" layoutY="174.0" prefHeight="40.0" prefWidth="250.0" promptText="Usuario" style="-fx-background-color: transparent; -fx-border-color: #04ccb5; -fx-border-width: 0px 0px 2px 0px;" />
-            <Button layoutX="159.0" layoutY="365.0" mnemonicParsing="false" onAction="#clicIniciarSesion" prefHeight="31.0" prefWidth="85.0" style="-fx-background-color: #050000;" text="Entrar" textFill="WHITE" />
+            <TextField fx:id="tfUsuario" layoutX="93.0" layoutY="174.0" prefHeight="40.0" prefWidth="250.0" promptText="Usuario" style="-fx-background-color: transparent; -fx-border-color: #5ec1ff; -fx-border-width: 0px 0px 2px 0px;" />
+            <Button layoutX="159.0" layoutY="365.0" mnemonicParsing="false" onAction="#clicIniciarSesion" prefHeight="31.0" prefWidth="85.0" style="-fx-background-color: #050000;" styleClass="btn" stylesheets="@css/FXMLMenuPrincipal.css" text="Entrar" textFill="WHITE" />
             <Label fx:id="lbErrorUsuario" layoutX="92.0" layoutY="220.0" prefHeight="17.0" prefWidth="250.0" textFill="RED" />
             <Label fx:id="lbErrorPassword" layoutX="92.0" layoutY="298.0" prefHeight="17.0" prefWidth="250.0" textFill="RED" />
-            <PasswordField fx:id="tfPassword" layoutX="93.0" layoutY="253.0" prefHeight="40.0" prefWidth="250.0" promptText="Contraseña" style="-fx-background-color: transparent; -fx-border-color: #04ccb5; -fx-border-width: 0px 0px 2px 0px;" />
+            <PasswordField fx:id="tfPassword" layoutX="93.0" layoutY="253.0" prefHeight="40.0" prefWidth="250.0" promptText="Contraseña" style="-fx-background-color: transparent; -fx-border-color: #5ec1ff; -fx-border-width: 0px 0px 2px 0px;" />
             <FontAwesomeIcon glyphName="USER" layoutX="64.0" layoutY="202.0" size="20" />
             <FontAwesomeIcon glyphName="KEY" layoutX="61.0" layoutY="280.0" size="20" />
             <FontAwesomeIcon glyphName="USERS" layoutX="176.0" layoutY="93.0" size="3.5em" />
