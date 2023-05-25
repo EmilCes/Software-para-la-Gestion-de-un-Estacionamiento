@@ -65,6 +65,7 @@ public class FXMLMenuPrincipalController implements Initializable {
         apMenuPrincipal.getChildren().clear();
         resetearEstiloBotones();
         btnCobro.setDisable(true);
+        cambiarPane("/sge/vistas/FXMLCobros.fxml");
     }
 
     @FXML

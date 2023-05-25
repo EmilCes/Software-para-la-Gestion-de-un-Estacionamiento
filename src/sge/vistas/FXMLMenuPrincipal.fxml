@@ -74,6 +74,7 @@
                <center>
                   <AnchorPane fx:id="apMenuPrincipal" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
                      <children>
+                        
                      </children>
                   </AnchorPane>
                </center>

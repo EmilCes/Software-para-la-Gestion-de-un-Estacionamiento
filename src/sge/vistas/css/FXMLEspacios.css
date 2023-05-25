@@ -1,17 +1,8 @@
-.info-btn{
-    -fx-background-radius: 5px;
-    -fx-background-color: transparent;
-    -fx-cursor: hand;
-}
-
-.info-btn:hover{
-    -fx-background-color: #5ec1ff;
-}
-
 .espacio{
     -fx-background-radius: 5px;
     /*-fx-background-color: #55cf77;*/ /*#f76045 en uso*/
     -fx-background-color: #16a1f7;
+    -fx-cursor: hand;
 }
 
 .espacio:hover{
@@ -26,8 +17,13 @@
 .page-btn{
     -fx-background-color: #16a1f7;
 }
+
 .page-btn:hover{
     -fx-background-color: #5ec1ff;
-    -fx-cursor: hand;
-    
+    -fx-cursor: hand;   
 }
+
+.page-btn:disabled{
+    -fx-background-color: #2fa9f5;
+}
+
