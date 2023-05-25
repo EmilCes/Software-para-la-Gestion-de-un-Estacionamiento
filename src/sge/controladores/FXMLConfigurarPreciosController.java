@@ -1,7 +1,4 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/javafx/FXMLController.java to edit this template
- */
+
 package sge.controladores;
 
 import java.net.URL;
@@ -20,11 +17,9 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
 import sge.utils.Utilidades;
 
-/**
- * FXML Controller class
- *
- * @author kirbithalbertocubillashernandez
- */
+
+
+
 public class FXMLConfigurarPreciosController implements Initializable {
 
     @FXML
@@ -78,9 +73,9 @@ public class FXMLConfigurarPreciosController implements Initializable {
     @FXML
     private PasswordField tfContraseñaAdmin;
 
-    /**
-     * Initializes the controller class.
-     */
+   
+    
+    
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         enviarConEnter();
@@ -92,6 +87,8 @@ public class FXMLConfigurarPreciosController implements Initializable {
         lbErrorPrecioEspecial.setText("");
         lbErrorTarjetaDamage.setText("");
         lbErrorTarjetaExtraviada.setText("");
+        lbErrorPrecioEspecialMoto.setText("");
+        lbErrorPrecioNormal.setText("");
         validarCampos();
     }
 
