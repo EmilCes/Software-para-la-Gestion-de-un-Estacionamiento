@@ -3,7 +3,6 @@ package sge.controladores;
 import java.io.IOException;
 import java.net.URL;
 import java.time.LocalDate;
-import java.time.LocalTime;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -71,9 +70,8 @@ public class FXMLEspaciosController implements Initializable {
         AnchorPane apPadreEspacios = (AnchorPane) apEspacios.getParent();
         
         String numeroPiso = pnLugar.getParent().getId().substring(6);
-        int numeroCajon = Integer.parseInt( lbNumeroCajon.getText());
+        int numeroCajon = Integer.parseInt(lbNumeroCajon.getText());
         String fechaEntrada = LocalDate.now().toString();
-        String horaEntrada = LocalTime.now().toString();
         String numeroTarjeta = "123456";
 
         
@@ -83,7 +81,7 @@ public class FXMLEspaciosController implements Initializable {
             AnchorPane asignarEspaciosPane = asignarEspaciosLoader.load();
             apPadreEspacios.getChildren().add(asignarEspaciosPane);
             FXMLAsignarEspaciosController asignarEspaciosControlador = asignarEspaciosLoader.getController();
-            asignarEspaciosControlador.llenarInformaciónPantalla(numeroCajon, numeroPiso, fechaEntrada, horaEntrada, numeroTarjeta);
+            asignarEspaciosControlador.llenarInformaciónPantalla(numeroCajon, numeroPiso, fechaEntrada, numeroTarjeta);
         } catch (IOException ex) {
             System.err.println(ex.getStackTrace());
         }

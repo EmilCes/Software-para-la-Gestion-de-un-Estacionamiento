@@ -57,12 +57,7 @@
                                                 <Font name="System Bold" size="22.0" />
                                              </font>
                                           </Label>
-                                          <Label layoutX="20.0" layoutY="180.0" text="Hora de Entrada">
-                                             <font>
-                                                <Font name="System Bold" size="22.0" />
-                                             </font>
-                                          </Label>
-                                          <Label layoutX="20.0" layoutY="224.0" text="Número de Tarjeta">
+                                          <Label layoutX="20.0" layoutY="180.0" text="Número de Tarjeta">
                                              <font>
                                                 <Font name="System Bold" size="22.0" />
                                              </font>
@@ -72,17 +67,12 @@
                                                 <Font size="22.0" />
                                              </font>
                                           </Label>
-                                          <Label fx:id="lbNumeroTarjeta" layoutX="220.0" layoutY="224.0" text="123445678">
+                                          <Label fx:id="lbNumeroTarjeta" layoutX="220.0" layoutY="180.0" text="123445678">
                                              <font>
                                                 <Font size="22.0" />
                                              </font>
                                           </Label>
                                           <Label fx:id="lbNumeroCajon" layoutX="220.0" layoutY="48.0" text="10">
-                                             <font>
-                                                <Font size="22.0" />
-                                             </font>
-                                          </Label>
-                                          <Label fx:id="lbHoraEntrada" layoutX="220.0" layoutY="180.0" text="12:21">
                                              <font>
                                                 <Font size="22.0" />
                                              </font>
