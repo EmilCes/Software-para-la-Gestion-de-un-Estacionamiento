@@ -1,7 +1,21 @@
-/*
- * Empty Stylesheet file.
- */
+.save-btn{
+    -fx-background-color: #16a1f7;
+    -fx-cursor: hand;
+}
 
-.mainFxmlClass {
+.save-btn:hover{
+    -fx-background-color: #5ec1ff;
+}
+.info-btn{
+    -fx-background-radius: 30px;
+    -fx-cursor: hand;
+}
 
+.info-btn:hover{
+    -fx-background-color: #d5d9db;
+}
+
+.estilo-pane{
+    -fx-background-radius: 8px;
+    -fx-background-color: #16a1f7;
 }

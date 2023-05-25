@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import de.jensd.fx.glyphs.fontawesome.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
 <?import java.lang.*?>
 <?import java.net.*?>
 <?import java.util.*?>
@@ -7,14 +10,125 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-
-                        <AnchorPane fx:id="apConfigurarPrecios" prefHeight="600.0" prefWidth="939.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sge.controladores.FXMLConfigurarPreciosController">
+<AnchorPane fx:id="apConfigurarPrecios" prefHeight="600.0" prefWidth="939.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sge.controladores.FXMLConfigurarPreciosController">
                            <children>
                               <Pane prefHeight="200.0" prefWidth="200.0" stylesheets="@css/FXMLMenuPrincipal.css" AnchorPane.bottomAnchor="25.0" AnchorPane.leftAnchor="25.0" AnchorPane.rightAnchor="25.0" AnchorPane.topAnchor="75.0">
                                  <styleClass>
                                     <String fx:value="shadow" />
                                     <String fx:value="white-bg" />
                                  </styleClass>
+         <children>
+            <Label layoutX="69.0" layoutY="171.0" text="Precio por hora normal">
+               <font>
+                  <Font size="19.0" />
+               </font>
+            </Label>
+            <TextField fx:id="tfPrecioNormal" layoutX="73.0" layoutY="204.0" />
+            <TextField fx:id="tfTarjetaDamage" layoutX="633.0" layoutY="204.0" />
+            <TextField fx:id="tfTarjetaExtraviada" layoutX="632.0" layoutY="317.0" />
+            <Label layoutX="71.0" layoutY="282.0" text="Precio por hora especial">
+               <font>
+                  <Font size="19.0" />
+               </font>
+            </Label>
+            <TextField fx:id="tfPrecioEspecial" layoutX="75.0" layoutY="317.0" />
+            <Label layoutX="628.0" layoutY="171.0" text="Tarjeta dañada">
+               <font>
+                  <Font size="19.0" />
+               </font>
+            </Label>
+            <Label layoutX="626.0" layoutY="282.0" text="Tarjeta extraviada">
+               <font>
+                  <Font size="19.0" />
+               </font>
+            </Label>
+            <Button fx:id="btnGuardarPrecios" layoutX="630.0" layoutY="400.0" mnemonicParsing="false" onAction="#clicBtnGuardarPrecios" prefHeight="54.0" prefWidth="178.0" styleClass="save-btn" stylesheets="@css/FXMLConfigurarPrecios.css" />
+            <FontAwesomeIcon fill="WHITE" glyphName="SAVE" layoutX="766.0" layoutY="440.0" size="35" />
+            <Label layoutX="638.0" layoutY="419.0" style="-fx-cursor: hand;" text="GUARDAR CAMBIOS" textFill="WHITE" />
+            <Pane layoutX="53.0" layoutY="99.0" prefHeight="48.0" prefWidth="200.0" styleClass="estilo-pane" stylesheets="@css/FXMLConfigurarPrecios.css">
+               <children>
+                  <Label layoutX="35.0" layoutY="6.0" text="Cuotas" textFill="WHITE">
+                     <font>
+                        <Font size="30.0" />
+                     </font>
+                  </Label>
+                  <FontAwesomeIcon fill="WHITE" glyphName="CAR" layoutX="144.0" layoutY="35.0" size="25" text="" />
+               </children>
+            </Pane>
+            <Pane layoutX="615.0" layoutY="99.0" prefHeight="48.0" prefWidth="200.0" styleClass="estilo-pane" stylesheets="@css/FXMLConfigurarPrecios.css">
+               <children>
+                  <Label layoutX="35.0" layoutY="6.0" text="Multas" textFill="WHITE">
+                     <font>
+                        <Font size="30.0" />
+                     </font>
+                  </Label>
+                  <FontAwesomeIcon fill="WHITE" glyphName="MONEY" layoutX="143.0" layoutY="35.0" size="25" />
+               </children>
+            </Pane>
+            <Button fx:id="btnInfoTarjetaDamage" layoutX="592.0" layoutY="172.0" mnemonicParsing="false" onAction="#clicBtnInfoTarjetaDamage" prefHeight="23.0" prefWidth="23.0" styleClass="info-btn" stylesheets="@css/FXMLConfigurarPrecios.css" text="?" textFill="#555b65">
+               <font>
+                  <Font size="12.0" />
+               </font>
+            </Button>
+            <Button fx:id="btnInfoTarjetaExtraviada" layoutX="592.0" layoutY="283.0" mnemonicParsing="false" onAction="#clicBtnInfoTarjetaExtraviada" prefHeight="23.0" prefWidth="23.0" styleClass="info-btn" stylesheets="@css/FXMLConfigurarPrecios.css" text="?" textFill="#555b65">
+               <font>
+                  <Font size="12.0" />
+               </font>
+            </Button>
+            <Button fx:id="btnInfoPrecioNormal" layoutX="35.0" layoutY="172.0" mnemonicParsing="false" onAction="#clicBtnInfoPrecioNormal" prefHeight="23.0" prefWidth="23.0" styleClass="info-btn" stylesheets="@css/FXMLConfigurarPrecios.css" text="?" textFill="#555b65">
+               <font>
+                  <Font size="12.0" />
+               </font>
+            </Button>
+            <Button fx:id="btnInfoPrecioEspecial" layoutX="35.0" layoutY="283.0" mnemonicParsing="false" onAction="#clicBtnInfoPrecioEspecial" prefHeight="23.0" prefWidth="23.0" styleClass="info-btn" stylesheets="@css/FXMLConfigurarPrecios.css" text="?" textFill="#555b65">
+               <font>
+                  <Font size="12.0" />
+               </font>
+            </Button>
+            <Label fx:id="lbErrorTarjetaDamage" layoutX="635.0" layoutY="231.0" prefHeight="17.0" prefWidth="159.0" textFill="RED" />
+            <Label fx:id="lbErrorTarjetaExtraviada" layoutX="635.0" layoutY="345.0" prefHeight="17.0" prefWidth="159.0" textFill="RED" />
+            <Label fx:id="lbErrorPrecioNormal" layoutX="73.0" layoutY="230.0" prefHeight="17.0" prefWidth="159.0" textFill="RED" />
+            <Label fx:id="lbErrorPrecioEspecial" layoutX="73.0" layoutY="342.0" prefHeight="17.0" prefWidth="159.0" textFill="RED" />
+            <Label fx:id="lbErrorPrecioEspecialMoto" layoutX="349.0" layoutY="342.0" prefHeight="17.0" prefWidth="159.0" textFill="RED" />
+            <Label fx:id="lbErrorPrecioNormalMoto" layoutX="349.0" layoutY="230.0" prefHeight="17.0" prefWidth="159.0" textFill="RED" />
+            <Button fx:id="btnInfoPrecioEspecialMoto" layoutX="311.0" layoutY="283.0" mnemonicParsing="false" onAction="#clicBtnInfoPrecioEspecialMoto" prefHeight="23.0" prefWidth="23.0" styleClass="info-btn" stylesheets="@css/FXMLConfigurarPrecios.css" text="?" textFill="#555b65">
+               <font>
+                  <Font size="12.0" />
+               </font>
+            </Button>
+            <Button fx:id="btnInfoPrecioNormalMoto" layoutX="311.0" layoutY="172.0" mnemonicParsing="false" onAction="#clicBtnInfoPrecioNormalMoto" prefHeight="23.0" prefWidth="23.0" styleClass="info-btn" stylesheets="@css/FXMLConfigurarPrecios.css" text="?" textFill="#555b65">
+               <font>
+                  <Font size="12.0" />
+               </font>
+            </Button>
+            <Pane layoutX="329.0" layoutY="98.0" prefHeight="48.0" prefWidth="200.0" styleClass="estilo-pane" stylesheets="@css/FXMLConfigurarPrecios.css">
+               <children>
+                  <Label layoutX="35.0" layoutY="6.0" text="Cuotas" textFill="WHITE">
+                     <font>
+                        <Font size="30.0" />
+                     </font>
+                  </Label>
+                  <FontAwesomeIcon fill="WHITE" glyphName="MOTORCYCLE" layoutX="144.0" layoutY="35.0" size="25" />
+               </children>
+            </Pane>
+            <TextField fx:id="tfPrecioEspecialMoto" layoutX="351.0" layoutY="317.0" />
+            <Label layoutX="347.0" layoutY="282.0" text="Precio por hora especial">
+               <font>
+                  <Font size="19.0" />
+               </font>
+            </Label>
+            <TextField fx:id="tfPrecioNormalMoto" layoutX="349.0" layoutY="204.0" />
+            <Label layoutX="345.0" layoutY="171.0" text="Precio por hora normal">
+               <font>
+                  <Font size="19.0" />
+               </font>
+            </Label>
+         </children>
                               </Pane>
+      <Label layoutX="25.0" layoutY="14.0" text="Configuracion de Precios">
+         <font>
+            <Font size="48.0" />
+         </font>
+      </Label>
                            </children>
                         </AnchorPane>
