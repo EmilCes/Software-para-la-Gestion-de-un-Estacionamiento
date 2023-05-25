@@ -88,7 +88,7 @@ public class FXMLConfigurarPreciosController implements Initializable {
         lbErrorTarjetaDamage.setText("");
         lbErrorTarjetaExtraviada.setText("");
         lbErrorPrecioEspecialMoto.setText("");
-        lbErrorPrecioNormal.setText("");
+        lbErrorPrecioNormalMoto.setText("");
         validarCampos();
     }
 
