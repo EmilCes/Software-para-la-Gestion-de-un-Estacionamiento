@@ -12,7 +12,7 @@
 
 <AnchorPane fx:id="apConfigurarPrecios" prefHeight="600.0" prefWidth="939.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sge.controladores.FXMLConfigurarPreciosController">
                            <children>
-                              <Pane prefHeight="200.0" prefWidth="200.0" stylesheets="@css/FXMLMenuPrincipal.css" AnchorPane.bottomAnchor="25.0" AnchorPane.leftAnchor="25.0" AnchorPane.rightAnchor="25.0" AnchorPane.topAnchor="75.0">
+                              <Pane fx:id="paneConfigurarPrecios" prefHeight="200.0" prefWidth="200.0" stylesheets="@css/FXMLMenuPrincipal.css" visible="false" AnchorPane.bottomAnchor="25.0" AnchorPane.leftAnchor="25.0" AnchorPane.rightAnchor="25.0" AnchorPane.topAnchor="75.0">
                                  <styleClass>
                                     <String fx:value="shadow" />
                                     <String fx:value="white-bg" />
@@ -130,5 +130,31 @@
             <Font size="48.0" />
          </font>
       </Label>
+      <Pane fx:id="paneContraseñaAdmin" layoutX="35.0" layoutY="85.0" prefHeight="200.0" prefWidth="200.0" stylesheets="@css/FXMLMenuPrincipal.css" AnchorPane.bottomAnchor="25.0" AnchorPane.leftAnchor="25.0" AnchorPane.rightAnchor="25.0" AnchorPane.topAnchor="75.0">
+         <styleClass>
+            <String fx:value="shadow" />
+            <String fx:value="white-bg" />
+         </styleClass>
+         <children>
+            <Pane layoutX="314.0" layoutY="99.0" prefHeight="250.0" prefWidth="271.0" stylesheets="@css/FXMLMenuPrincipal.css">
+               <styleClass>
+                  <String fx:value="shadow" />
+                  <String fx:value="white-bg" />
+               </styleClass>
+               <children>
+                  <FontAwesomeIcon glyphName="LOCK" layoutX="119.0" layoutY="70.0" size="50" text="" />
+                  <PasswordField fx:id="lbContraseñaAdmin" layoutX="64.0" layoutY="121.0" promptText="Contraseña" style="-fx-background-color: tranparent; -fx-border-color: #5ec1ff; -fx-border-width: 0px 0px 2px 0px;" />
+                  <FontAwesomeIcon glyphName="KEY" layoutX="24.0" layoutY="144.0" size="25" />
+                  <Button layoutX="93.0" layoutY="189.0" mnemonicParsing="false" onAction="#btnClicEntrarAdmin" prefHeight="31.0" prefWidth="85.0" style="-fx-background-color: #050000;" styleClass="btn" stylesheets="@css/FXMLMenuPrincipal.css" text="Entrar" textFill="WHITE" />
+                  <Button fx:id="btnInfoContraseñaAdmin" layoutX="11.0" layoutY="12.0" mnemonicParsing="false" onAction="#clicBtnInfoContraseñaAdmin" prefHeight="23.0" prefWidth="23.0" styleClass="info-btn" stylesheets="@css/FXMLConfigurarPrecios.css" text="?" textFill="#555b65">
+                     <font>
+                        <Font size="12.0" />
+                     </font>
+                  </Button>
+                  <Label fx:id="lbErrorContraseñaAdmin" layoutX="60.0" layoutY="150.0" prefHeight="17.0" prefWidth="171.0" textFill="RED" />
+               </children>
+            </Pane>
+         </children>
+      </Pane>
                            </children>
                         </AnchorPane>

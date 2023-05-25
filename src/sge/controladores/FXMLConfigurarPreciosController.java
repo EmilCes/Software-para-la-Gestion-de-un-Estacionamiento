@@ -12,8 +12,10 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.Pane;
 import sge.utils.Utilidades;
 
 /**
@@ -63,6 +65,16 @@ public class FXMLConfigurarPreciosController implements Initializable {
     private TextField tfPrecioEspecialMoto;
     @FXML
     private TextField tfPrecioNormalMoto;
+    @FXML
+    private Pane paneConfigurarPrecios;
+    @FXML
+    private Pane paneContraseñaAdmin;
+    @FXML
+    private PasswordField lbContraseñaAdmin;
+    @FXML
+    private Button btnInfoContraseñaAdmin;
+    @FXML
+    private Label lbErrorContraseñaAdmin;
 
     /**
      * Initializes the controller class.
@@ -82,16 +94,25 @@ public class FXMLConfigurarPreciosController implements Initializable {
     }
 
     @FXML
+    private void btnClicEntrarAdmin(ActionEvent event) {
+        lbErrorContraseñaAdmin.setText("");
+        if(validarContraseñaAdmin()){
+            paneContraseñaAdmin.setVisible(false);
+            paneConfigurarPrecios.setVisible(true);
+        }
+    }
+    
+    @FXML
     private void clicBtnInfoTarjetaDamage(ActionEvent event) {
         Utilidades.mostrarDialogoSimple("Informacion tarjeta dañada",
-                "Multa monetaria por daño completo o parcial de la tarejta del estacionamiento",
+                "Multa monetaria por daño completo o parcial de la tarjeta del estacionamiento",
                 Alert.AlertType.INFORMATION);
     }
 
     @FXML
     private void clicBtnInfoTarjetaExtraviada(ActionEvent event) {
         Utilidades.mostrarDialogoSimple("Informacion tarjeta extraviada",
-                "Multa monetaria por extravío de la tarejta del estacionamiento",
+                "Multa monetaria por extravío de la tarjeta del estacionamiento",
                 Alert.AlertType.INFORMATION);
     }
 
@@ -123,8 +144,27 @@ public class FXMLConfigurarPreciosController implements Initializable {
                 Alert.AlertType.INFORMATION);
     }
     
+    @FXML
+    private void clicBtnInfoContraseñaAdmin(ActionEvent event) {
+        Utilidades.mostrarDialogoSimple("Contraseña de administrador",
+                "Para poder configurar los precios, ingresa la contraseña de administrador",
+                Alert.AlertType.INFORMATION);
+    }
     
     
+    private boolean validarContraseñaAdmin(){
+        String contraseñaAdmin = lbContraseñaAdmin.getText();
+        if (contraseñaAdmin.equals("123456")){
+            return true;
+        }
+        if (contraseñaAdmin.isEmpty()){
+            lbErrorContraseñaAdmin.setText("Ingresar contraseña!");
+            return false;
+        }else{
+            lbErrorContraseñaAdmin.setText("Contraseña Incorrecta");
+            return false;
+        }
+    }
     
     private void validarCampos(){
         String precioNormal = tfPrecioNormal.getText();
@@ -194,4 +234,8 @@ public class FXMLConfigurarPreciosController implements Initializable {
                 } 
          }
     }
+
+
+
+    
 }
