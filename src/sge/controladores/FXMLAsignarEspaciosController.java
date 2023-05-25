@@ -3,6 +3,8 @@ package sge.controladores;
 import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon;
 import java.io.IOException;
 import java.net.URL;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -37,7 +39,7 @@ public class FXMLAsignarEspaciosController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
     }    
     
-    public void llenarInformaciónPantalla(int numCajon, String numPiso, String fechaEntrada, String horaEntrada, String numTarjeta){
+    public void llenarInformaciónPantalla(int numCajon, String numPiso, String fechaEntrada, String numTarjeta){
         String numCajonUnDigito = (numCajon < 10) ? "0" + numCajon : "" + numCajon; 
         if(numPiso.equals("Motos")){
             faIcon.setGlyphName("MOTORCYCLE");
@@ -48,13 +50,16 @@ public class FXMLAsignarEspaciosController implements Initializable {
         lbNumeroPiso.setText(numPiso);
         lbNumeroTarjeta.setText(numTarjeta);
         lbNumeroCajon.setText(numCajonUnDigito);
-        lbHoraEntrada.setText(horaEntrada);
         lbFechaEntrada.setText(fechaEntrada);
     }
 
 
     @FXML
     private void clicBtnConfirmar(ActionEvent event) {
+        DateTimeFormatter formatoHora = DateTimeFormatter.ofPattern("HH:mm");
+        String horaEntrada = LocalDateTime.now().minusHours(1).toLocalTime().format(formatoHora).toString();
+        System.out.println("Hora de Entrada: " + horaEntrada);
+
     }
 
     @FXML
