@@ -79,6 +79,8 @@ public class FXMLMenuPrincipalController implements Initializable {
         apMenuPrincipal.getChildren().clear();
         resetearEstiloBotones();
         btnPrecios.setDisable(true);
+        
+        cambiarPane("/sge/vistas/FXMLConfigurarPrecios.fxml");
     }
     
 }
