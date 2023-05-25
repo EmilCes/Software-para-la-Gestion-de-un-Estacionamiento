@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+<?import de.jensd.fx.glyphs.fontawesome.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane fx:id="apAsignarEspacios" layoutX="177.0" layoutY="113.0" prefHeight="600.0" prefWidth="939.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sge.controladores.FXMLAsignarEspaciosController">
+                           <children>
+                              <AnchorPane layoutX="110.0" layoutY="200.0" prefHeight="200.0" prefWidth="200.0" stylesheets="@css/FXMLMenuPrincipal.css" AnchorPane.bottomAnchor="25.0" AnchorPane.leftAnchor="25.0" AnchorPane.rightAnchor="25.0" AnchorPane.topAnchor="75.0">
+                                 <styleClass>
+                                    <String fx:value="shadow" />
+                                    <String fx:value="white-bg" />
+                                 </styleClass>
+                                 <children>
+                                    <Pane prefHeight="430.0" prefWidth="374.0" styleClass="espacio" stylesheets="@css/FXMLAsignarEspacios.css" AnchorPane.bottomAnchor="35.0" AnchorPane.leftAnchor="35.0" AnchorPane.rightAnchor="480.0" AnchorPane.topAnchor="35.0">
+                                       <children>
+                                          <FontAwesomeIcon fx:id="faIcon" fill="WHITE" glyphName="CAR" layoutX="60.0" layoutY="270.0" size="18em" styleClass="espacio-disponible" />
+                                          <Line endX="100.0" layoutX="165.0" layoutY="330.0" scaleX="2.0" startX="-50.0" stroke="WHITE" />
+                                          <Label fx:id="lbNumeroLugar" layoutX="155.0" layoutY="339.0" text="01" textAlignment="CENTER" textFill="WHITE">
+                                             <font>
+                                                <Font size="72.0" />
+                                             </font>
+                                          </Label>
+                                       </children>
+                                    </Pane>
+                                    <Label layoutX="480.0" layoutY="30.0" text="Información del Lugar">
+                                       <font>
+                                          <Font size="36.0" />
+                                       </font>
+                                    </Label>
+                                    <Pane layoutX="576.0" layoutY="150.0" prefHeight="200.0" prefWidth="200.0" stylesheets="@css/FXMLAsignarEspacios.css" AnchorPane.bottomAnchor="35.0" AnchorPane.leftAnchor="450.0" AnchorPane.rightAnchor="35.0" AnchorPane.topAnchor="105.0">
+                                       <styleClass>
+                                          <String fx:value="shadow" />
+                                          <String fx:value="info-lugar" />
+                                       </styleClass>
+                                       <children>
+                                          <Button layoutX="307.0" layoutY="306.0" mnemonicParsing="false" onAction="#clicBtnConfirmar" styleClass="btn-confirmar" stylesheets="@css/FXMLAsignarEspacios.css" text="Confirmar" textFill="WHITE" />
+                                          <Button layoutX="235.0" layoutY="306.0" mnemonicParsing="false" onAction="#clicBtnCancelar" styleClass="btn-cancelar" stylesheets="@css/FXMLAsignarEspacios.css" text="Cancelar" textFill="WHITE" />
+                                          <Label layoutX="20.0" layoutY="48.0" text="Número Cajón">
+                                             <font>
+                                                <Font name="System Bold" size="22.0" />
+                                             </font>
+                                          </Label>
+                                          <Label layoutX="20.0" layoutY="92.0" text="Número Piso">
+                                             <font>
+                                                <Font name="System Bold" size="22.0" />
+                                             </font>
+                                          </Label>
+                                          <Label layoutX="20.0" layoutY="136.0" text="Fecha de Entrada">
+                                             <font>
+                                                <Font name="System Bold" size="22.0" />
+                                             </font>
+                                          </Label>
+                                          <Label layoutX="20.0" layoutY="180.0" text="Hora de Entrada">
+                                             <font>
+                                                <Font name="System Bold" size="22.0" />
+                                             </font>
+                                          </Label>
+                                          <Label layoutX="20.0" layoutY="224.0" text="Número de Tarjeta">
+                                             <font>
+                                                <Font name="System Bold" size="22.0" />
+                                             </font>
+                                          </Label>
+                                          <Label fx:id="lbNumeroPiso" layoutX="220.0" layoutY="92.0" text="3">
+                                             <font>
+                                                <Font size="22.0" />
+                                             </font>
+                                          </Label>
+                                          <Label fx:id="lbNumeroTarjeta" layoutX="220.0" layoutY="224.0" text="123445678">
+                                             <font>
+                                                <Font size="22.0" />
+                                             </font>
+                                          </Label>
+                                          <Label fx:id="lbNumeroCajon" layoutX="220.0" layoutY="48.0" text="10">
+                                             <font>
+                                                <Font size="22.0" />
+                                             </font>
+                                          </Label>
+                                          <Label fx:id="lbHoraEntrada" layoutX="220.0" layoutY="180.0" text="12:21">
+                                             <font>
+                                                <Font size="22.0" />
+                                             </font>
+                                          </Label>
+                                          <Label fx:id="lbFechaEntrada" layoutX="220.0" layoutY="136.0" text="05/04/2023">
+                                             <font>
+                                                <Font size="22.0" />
+                                             </font>
+                                          </Label>
+                                       </children>
+                                    </Pane>
+                                 </children>
+                              </AnchorPane>
+                              <Label layoutX="81.0" layoutY="19.0" text="Asignar Espacio" AnchorPane.leftAnchor="25.0" AnchorPane.topAnchor="12.0">
+                                 <font>
+                                    <Font size="48.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>

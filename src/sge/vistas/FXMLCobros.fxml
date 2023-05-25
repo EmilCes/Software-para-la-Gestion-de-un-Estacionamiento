@@ -1,14 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+<?import de.jensd.fx.glyphs.fontawesome.*?>
 <?import java.lang.*?>
-<?import java.net.*?>
 <?import java.util.*?>
 <?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" styleClass="mainFxmlClass" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sge.controladores.FXMLCobrosController">
-    <stylesheets>
-        <URL value="@/sge/vistas/css/FXMLCobros.css"/>
-    </stylesheets>
+
+<AnchorPane fx:id="apAdministrarCobros" prefHeight="600.0" prefWidth="939.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sge.controladores.FXMLCobrosController">
+    <children>
+        <AnchorPane prefHeight="200.0" prefWidth="200.0" stylesheets="@css/FXMLMenuPrincipal.css" AnchorPane.bottomAnchor="25.0" AnchorPane.leftAnchor="25.0" AnchorPane.rightAnchor="25.0" AnchorPane.topAnchor="75.0">
+            <styleClass>
+                <String fx:value="white-bg" />
+                <String fx:value="shadow" />
+            </styleClass>
+            <children>
+                <Pane prefHeight="200.0" prefWidth="200.0" stylesheets="@css/FXMLCobros.css" AnchorPane.bottomAnchor="25.0" AnchorPane.leftAnchor="500.0" AnchorPane.rightAnchor="25.0" AnchorPane.topAnchor="25.0">
+                    <styleClass>
+                        <String fx:value="shadow" />
+                        <String fx:value="ticket" />
+                    </styleClass>
+                </Pane>
+            </children>
+        </AnchorPane>
+        <Label text="Administrar Cobro" AnchorPane.leftAnchor="25.0" AnchorPane.topAnchor="17.0">
+            <font>
+                <Font size="48.0" />
+            </font>
+        </Label>
+    </children>
 </AnchorPane>

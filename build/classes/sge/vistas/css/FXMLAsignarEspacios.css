@@ -1,0 +1,33 @@
+.shadow{
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.5), 6, 0, 0, 0);
+}
+
+.info-lugar{
+    -fx-background-color: #fff;
+    -fx-background-radius: 4px;
+}
+
+.btn-confirmar{
+    -fx-background-color: #16a1f7;
+    -fx-cursor: hand;
+}
+
+.btn-confirmar:hover{
+    -fx-background-color: #5ec1ff;
+}
+
+.btn-cancelar{
+    -fx-background-color: #f76045;
+    -fx-cursor: hand;
+    
+}
+
+.btn-cancelar:hover{
+    -fx-background-color: #fc9e8d;
+}
+
+.espacio{
+    -fx-background-radius: 5px;
+    -fx-background-color: #16a1f7;
+    -fx-cursor: hand;
+}
