@@ -143,7 +143,7 @@
                </styleClass>
                <children>
                   <FontAwesomeIcon glyphName="LOCK" layoutX="119.0" layoutY="70.0" size="50" text="" />
-                  <PasswordField fx:id="lbContraseñaAdmin" layoutX="64.0" layoutY="121.0" promptText="Contraseña" style="-fx-background-color: tranparent; -fx-border-color: #5ec1ff; -fx-border-width: 0px 0px 2px 0px;" />
+                  <PasswordField fx:id="tfContraseñaAdmin" layoutX="64.0" layoutY="121.0" promptText="Contraseña" style="-fx-background-color: tranparent; -fx-border-color: #5ec1ff; -fx-border-width: 0px 0px 2px 0px;" />
                   <FontAwesomeIcon glyphName="KEY" layoutX="24.0" layoutY="144.0" size="25" />
                   <Button layoutX="93.0" layoutY="189.0" mnemonicParsing="false" onAction="#btnClicEntrarAdmin" prefHeight="31.0" prefWidth="85.0" style="-fx-background-color: #050000;" styleClass="btn" stylesheets="@css/FXMLMenuPrincipal.css" text="Entrar" textFill="WHITE" />
                   <Button fx:id="btnInfoContraseñaAdmin" layoutX="11.0" layoutY="12.0" mnemonicParsing="false" onAction="#clicBtnInfoContraseñaAdmin" prefHeight="23.0" prefWidth="23.0" styleClass="info-btn" stylesheets="@css/FXMLConfigurarPrecios.css" text="?" textFill="#555b65">

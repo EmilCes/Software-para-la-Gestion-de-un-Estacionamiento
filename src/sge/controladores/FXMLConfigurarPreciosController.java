@@ -14,6 +14,8 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
 import sge.utils.Utilidades;
@@ -70,19 +72,19 @@ public class FXMLConfigurarPreciosController implements Initializable {
     @FXML
     private Pane paneContraseñaAdmin;
     @FXML
-    private PasswordField lbContraseñaAdmin;
-    @FXML
     private Button btnInfoContraseñaAdmin;
     @FXML
     private Label lbErrorContraseñaAdmin;
+    @FXML
+    private PasswordField tfContraseñaAdmin;
 
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
-    }    
+        enviarConEnter();
+    }
 
     @FXML
     private void clicBtnGuardarPrecios(ActionEvent event) {
@@ -96,12 +98,9 @@ public class FXMLConfigurarPreciosController implements Initializable {
     @FXML
     private void btnClicEntrarAdmin(ActionEvent event) {
         lbErrorContraseñaAdmin.setText("");
-        if(validarContraseñaAdmin()){
-            paneContraseñaAdmin.setVisible(false);
-            paneConfigurarPrecios.setVisible(true);
-        }
+        validarContraseñaAdmin();
     }
-    
+
     @FXML
     private void clicBtnInfoTarjetaDamage(ActionEvent event) {
         Utilidades.mostrarDialogoSimple("Informacion tarjeta dañada",
@@ -119,123 +118,131 @@ public class FXMLConfigurarPreciosController implements Initializable {
     @FXML
     private void clicBtnInfoPrecioNormal(ActionEvent event) {
         Utilidades.mostrarDialogoSimple("Informacion precio normal - Vehiculos",
-                "Precio por cada hora en el estacionamiento para automoviles", 
+                "Precio por cada hora en el estacionamiento para automoviles",
                 Alert.AlertType.INFORMATION);
     }
 
     @FXML
     private void clicBtnInfoPrecioEspecial(ActionEvent event) {
         Utilidades.mostrarDialogoSimple("Informacion precio especial - Vehiculos",
-                "Precio por cada hora en el estacionamiento para automoviles cuando su estancia ha rebasado las 12 horas", 
+                "Precio por cada hora en el estacionamiento para automoviles cuando su estancia ha rebasado las 12 horas",
                 Alert.AlertType.INFORMATION);
     }
-    
+
     @FXML
     private void clicBtnInfoPrecioEspecialMoto(ActionEvent event) {
         Utilidades.mostrarDialogoSimple("Informacion precio especial - Motocicletas",
-                "Precio por cada hora en el estacionamiento para motocicletas cuando su estancia ha rebasado las 12 horas", 
+                "Precio por cada hora en el estacionamiento para motocicletas cuando su estancia ha rebasado las 12 horas",
                 Alert.AlertType.INFORMATION);
     }
 
     @FXML
     private void clicBtnInfoPrecioNormalMoto(ActionEvent event) {
         Utilidades.mostrarDialogoSimple("Informacion precio normal - Motocicletas",
-                "Precio por cada hora en el estacionamiento para motocicletas", 
+                "Precio por cada hora en el estacionamiento para motocicletas",
                 Alert.AlertType.INFORMATION);
     }
-    
+
     @FXML
     private void clicBtnInfoContraseñaAdmin(ActionEvent event) {
         Utilidades.mostrarDialogoSimple("Contraseña de administrador",
                 "Para poder configurar los precios, ingresa la contraseña de administrador",
                 Alert.AlertType.INFORMATION);
     }
-    
-    
-    private boolean validarContraseñaAdmin(){
-        String contraseñaAdmin = lbContraseñaAdmin.getText();
-        if (contraseñaAdmin.equals("123456")){
-            return true;
+
+    private void validarContraseñaAdmin() {
+        String contraseñaAdmin = tfContraseñaAdmin.getText();
+        if (contraseñaAdmin.equals("123456")) {
+            paneContraseñaAdmin.setVisible(false);
+            paneConfigurarPrecios.setVisible(true);;
+            return;
         }
-        if (contraseñaAdmin.isEmpty()){
+        if (contraseñaAdmin.isEmpty()) {
             lbErrorContraseñaAdmin.setText("Ingresar contraseña!");
-            return false;
-        }else{
+            return;
+        } else {
             lbErrorContraseñaAdmin.setText("Contraseña Incorrecta");
-            return false;
+            return;
         }
     }
-    
-    private void validarCampos(){
+
+    private void validarCampos() {
         String precioNormal = tfPrecioNormal.getText();
         String precioEspecial = tfPrecioEspecial.getText();
         String precioNormalMoto = tfPrecioNormalMoto.getText();
         String precioEspecialMoto = tfPrecioEspecialMoto.getText();
         String tarjetaDamage = tfTarjetaDamage.getText();
         String tarjetaExtraviada = tfTarjetaExtraviada.getText();
-        
-         if (precioNormal.isEmpty()) {
-             lbErrorPrecioNormal.setText("Campo Necesario");
-        }else{
-             try {
+
+        if (precioNormal.isEmpty()) {
+            lbErrorPrecioNormal.setText("Campo Necesario");
+        } else {
+            try {
                 Double.parseDouble(precioNormal);
-                } catch (NumberFormatException e) {
-                 lbErrorPrecioNormal.setText("Ingresar cantidad numerica");
-                }
-         }
-         
-         if (precioEspecial.isEmpty()) {
-             lbErrorPrecioEspecial.setText("Campo Necesario");
-        }else{
-             try {
+            } catch (NumberFormatException e) {
+                lbErrorPrecioNormal.setText("Ingresar cantidad numerica");
+            }
+        }
+
+        if (precioEspecial.isEmpty()) {
+            lbErrorPrecioEspecial.setText("Campo Necesario");
+        } else {
+            try {
                 Double.parseDouble(precioEspecial);
-                } catch (NumberFormatException e) {
-                 lbErrorPrecioEspecial.setText("Ingresar cantidad numerica");
-                }
-         }
-         
-         if (precioNormalMoto.isEmpty()) {
-             lbErrorPrecioNormalMoto.setText("Campo Necesario");
-        }else{
-             try {
+            } catch (NumberFormatException e) {
+                lbErrorPrecioEspecial.setText("Ingresar cantidad numerica");
+            }
+        }
+
+        if (precioNormalMoto.isEmpty()) {
+            lbErrorPrecioNormalMoto.setText("Campo Necesario");
+        } else {
+            try {
                 Double.parseDouble(precioNormalMoto);
-                } catch (NumberFormatException e) {
-                 lbErrorPrecioNormalMoto.setText("Ingresar cantidad numerica");
-                }
-         }
-         
-         if (precioEspecialMoto.isEmpty()) {
-             lbErrorPrecioEspecialMoto.setText("Campo Necesario");
-        }else{
-             try {
+            } catch (NumberFormatException e) {
+                lbErrorPrecioNormalMoto.setText("Ingresar cantidad numerica");
+            }
+        }
+
+        if (precioEspecialMoto.isEmpty()) {
+            lbErrorPrecioEspecialMoto.setText("Campo Necesario");
+        } else {
+            try {
                 Double.parseDouble(precioEspecialMoto);
-                } catch (NumberFormatException e) {
-                 lbErrorPrecioEspecialMoto.setText("Ingresar cantidad numerica");
-                }
-         }
-         
-         if (tarjetaDamage.isEmpty()) {
-             lbErrorTarjetaDamage.setText("Campo Necesario");
-        }else{
-             try {
+            } catch (NumberFormatException e) {
+                lbErrorPrecioEspecialMoto.setText("Ingresar cantidad numerica");
+            }
+        }
+
+        if (tarjetaDamage.isEmpty()) {
+            lbErrorTarjetaDamage.setText("Campo Necesario");
+        } else {
+            try {
                 Double.parseDouble(tarjetaDamage);
-                } catch (NumberFormatException e) {
-                 lbErrorTarjetaDamage.setText("Ingresar cantidad numerica");
-                }
-         }
-         
-         if (tarjetaExtraviada.isEmpty()) {
-             lbErrorTarjetaExtraviada.setText("Campo Necesario");
-        }else{
-             try {
+            } catch (NumberFormatException e) {
+                lbErrorTarjetaDamage.setText("Ingresar cantidad numerica");
+            }
+        }
+
+        if (tarjetaExtraviada.isEmpty()) {
+            lbErrorTarjetaExtraviada.setText("Campo Necesario");
+        } else {
+            try {
                 Double.parseDouble(tarjetaExtraviada);
-                } catch (NumberFormatException e) {
+            } catch (NumberFormatException e) {
                 lbErrorTarjetaExtraviada.setText("Ingresar cantidad numerica");
-                } 
-         }
+            }
+        }
     }
 
+    public void enviarConEnter() {
+        tfContraseñaAdmin.setOnKeyPressed((KeyEvent event) -> {
+            if (event.getCode() == KeyCode.ENTER) {
+                lbErrorContraseñaAdmin.setText("");
+                validarContraseñaAdmin();
+            }
 
+        });
+    }
 
-    
 }
