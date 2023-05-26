@@ -42,7 +42,7 @@
                                     <FontAwesomeIcon fill="WHITE" glyphName="CHECK" size="1.5em" />
                                  </graphic>
                               </Button>
-                              <Button layoutX="14.0" layoutY="514.0" mnemonicParsing="false" stylesheets="@css/FXMLMenuPrincipal.css">
+                              <Button layoutX="14.0" layoutY="514.0" mnemonicParsing="false" onAction="#clicBtnCerrarSesion" stylesheets="@css/FXMLMenuPrincipal.css">
                                  <graphic>
                                     <FontAwesomeIcon fill="WHITE" glyphName="SIGN_OUT" size="1.5em" />
                                  </graphic>
