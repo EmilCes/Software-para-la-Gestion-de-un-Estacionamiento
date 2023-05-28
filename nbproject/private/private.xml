@@ -3,11 +3,9 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/Users/cesar/Documents/UV/4.%20Cuarto%20Periodo/Procesos/Proyecto/Software-para-la-Gestion-de-un-Estacionamiento/src/sge/controladores/FXMLMenuPrincipalController.java</file>
-            <file>file:/Users/cesar/Documents/UV/4.%20Cuarto%20Periodo/Procesos/Proyecto/Software-para-la-Gestion-de-un-Estacionamiento/src/sge/SGE.java</file>
-            <file>file:/Users/cesar/Documents/UV/4.%20Cuarto%20Periodo/Procesos/Proyecto/Software-para-la-Gestion-de-un-Estacionamiento/src/sge/controladores/FXMLInicioSesionController.java</file>
-            <file>file:/Users/cesar/Documents/UV/4.%20Cuarto%20Periodo/Procesos/Proyecto/Software-para-la-Gestion-de-un-Estacionamiento/src/sge/utils/Utilidades.java</file>
-            <file>file:/Users/cesar/Documents/UV/4.%20Cuarto%20Periodo/Procesos/Proyecto/Software-para-la-Gestion-de-un-Estacionamiento/src/sge/controladores/FXMLConfigurarPreciosController.java</file>
+            <file>file:/Users/kirbithalbertocubillashernandez/Documents/4to%20Semestre/Procesos/Software-para-la-Gestion-de-un-Estacionamiento/src/sge/modelos/dao/ConfiguracionPreciosDAO.java</file>
+            <file>file:/Users/kirbithalbertocubillashernandez/Documents/4to%20Semestre/Procesos/Software-para-la-Gestion-de-un-Estacionamiento/src/sge/modelos/ConecionBD.java</file>
+            <file>file:/Users/kirbithalbertocubillashernandez/Documents/4to%20Semestre/Procesos/Software-para-la-Gestion-de-un-Estacionamiento/src/sge/modelos/pojo/ConfiguracionPrecios.java</file>
         </group>
     </open-files>
 </project-private>
