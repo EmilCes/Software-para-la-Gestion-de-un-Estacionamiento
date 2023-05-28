@@ -9,6 +9,8 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.layout.AnchorPane;
+import javafx.stage.Stage;
+import sge.utils.Utilidades;
 
 
 
@@ -82,6 +84,21 @@ public class FXMLMenuPrincipalController implements Initializable {
         btnPrecios.setDisable(true);
         
         cambiarPane("/sge/vistas/FXMLConfigurarPrecios.fxml");
+    }
+    
+    @FXML
+    private void clicBtnCerrarSesion(ActionEvent event) {
+        boolean cerrarSesion = Utilidades.mostrarDialogoConfirmacion("Cerrar Sesión", "¿Seguro que deseas salir?");
+        if(cerrarSesion)
+            irInicioSesion();
+    }
+    
+    private void irInicioSesion(){
+        Stage escenarioBase = (Stage) btnEspacios.getScene().getWindow();
+        escenarioBase.setScene(Utilidades.inicializarEscena("vistas/FXMLInicioSesion.fxml"));
+        Utilidades.centrarEscenario(escenarioBase);
+        escenarioBase.setTitle("Inicio Sesíon");    
+        escenarioBase.show();   
     }
     
 }

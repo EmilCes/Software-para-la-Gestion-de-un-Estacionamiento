@@ -1,11 +1,13 @@
 package sge.utils;
 
 import java.io.IOException;
+import java.util.Optional;
 import javafx.fxml.FXMLLoader;
 import javafx.geometry.Rectangle2D;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
+import javafx.scene.control.ButtonType;
 import javafx.stage.Screen;
 import javafx.stage.Stage;
 import sge.SGE;
@@ -20,6 +22,20 @@ public class Utilidades {
         alertaSimple.setContentText(mensaje);
         alertaSimple.setHeaderText(null);
         alertaSimple.showAndWait();
+    }
+    
+    public static boolean mostrarDialogoConfirmacion(String titulo, String mensaje){
+        boolean confirmacionSalir = false;
+        Alert alertaConfirmacion = new Alert(Alert.AlertType.CONFIRMATION);
+        alertaConfirmacion.setTitle(titulo);
+        alertaConfirmacion.setContentText(mensaje);
+        alertaConfirmacion.setHeaderText(null);
+        Optional<ButtonType> accionConfirmacion = alertaConfirmacion.showAndWait();
+        if(accionConfirmacion.get() == ButtonType.OK)
+            confirmacionSalir = true;
+        
+        return confirmacionSalir;
+        
     }
     
     public static Scene inicializarEscena(String ruta){
