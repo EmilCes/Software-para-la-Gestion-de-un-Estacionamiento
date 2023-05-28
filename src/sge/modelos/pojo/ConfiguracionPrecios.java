@@ -3,74 +3,41 @@ package sge.modelos.pojo;
 
 public class ConfiguracionPrecios {
     
-    private double precioNormalCarro;
-    private double precioEspecialCarro;
-    private double precioNormalMoto;
-    private double precioEspecialMoto;
-    private double tarjetaDamage;
-    private double tarjetaExtraviada;
+    private int IDPrecio;
+    private String descripcion;
+    private double cantidad;
 
     public ConfiguracionPrecios() {
     }
 
-    public ConfiguracionPrecios(double precioNormalCarro, double precioEspecialCarro, double precioNormalMoto, double precioEspecialMoto, double tarjetaDamage, double tarjetaExtraviada) {
-        this.precioNormalCarro = precioNormalCarro;
-        this.precioEspecialCarro = precioEspecialCarro;
-        this.precioNormalMoto = precioNormalMoto;
-        this.precioEspecialMoto = precioEspecialMoto;
-        this.tarjetaDamage = tarjetaDamage;
-        this.tarjetaExtraviada = tarjetaExtraviada;
+    public ConfiguracionPrecios(int IDPrecio, String descripcion, double cantidad) {
+        this.IDPrecio = IDPrecio;
+        this.descripcion = descripcion;
+        this.cantidad = cantidad;
     }
 
-    public double getPrecioNormalCarro() {
-        return precioNormalCarro;
+    public int getIDPrecio() {
+        return IDPrecio;
     }
 
-    public double getPrecioEspecialCarro() {
-        return precioEspecialCarro;
+    public String getDescripcion() {
+        return descripcion;
     }
 
-    public double getPrecioNormalMoto() {
-        return precioNormalMoto;
+    public double getCantidad() {
+        return cantidad;
     }
 
-    public double getPrecioEspecialMoto() {
-        return precioEspecialMoto;
+    public void setIDPrecio(int IDPrecio) {
+        this.IDPrecio = IDPrecio;
     }
 
-    public double getTarjetaDamage() {
-        return tarjetaDamage;
+    public void setDescripcion(String descripcion) {
+        this.descripcion = descripcion;
     }
 
-    public double getTarjetaExtraviada() {
-        return tarjetaExtraviada;
+    public void setCantidad(double cantidad) {
+        this.cantidad = cantidad;
     }
-
-    
-    public void setPrecioNormalCarro(double precioNormalCarro) {
-        this.precioNormalCarro = precioNormalCarro;
-    }
-
-    public void setPrecioEspecialCarro(double precioEspecialCarro) {
-        this.precioEspecialCarro = precioEspecialCarro;
-    }
-
-    public void setPrecioNormalMoto(double precioNormalMoto) {
-        this.precioNormalMoto = precioNormalMoto;
-    }
-
-    public void setPrecioEspecialMoto(double precioEspecialMoto) {
-        this.precioEspecialMoto = precioEspecialMoto;
-    }
-
-    public void setTarjetaDamage(double tarjetaDamage) {
-        this.tarjetaDamage = tarjetaDamage;
-    }
-
-    public void setTarjetaExtraviada(double tarjetaExtraviada) {
-        this.tarjetaExtraviada = tarjetaExtraviada;
-    }
-
-    
     
 }
