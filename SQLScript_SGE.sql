@@ -10,7 +10,7 @@ CREATE TABLE Tarjetas (
 	IDTarjeta INT AUTO_INCREMENT,
     PRIMARY KEY(IDTarjeta),
     estado NVARCHAR(15),
-	IDPrecio INT,
+	IDFechaHoraTarjeta INT,
     IDCajon INT
 );
 
@@ -49,7 +49,7 @@ CREATE TABLE Usuarios (
     contraseña NVARCHAR(20)
 );
 #CONSTRAINTS
-ALTER TABLE Tarjetas ADD CONSTRAINT FK_Tarjeta_Precio FOREIGN KEY(IDPrecio) REFERENCES Precios(IDPrecio) ON DELETE CASCADE;
+ALTER TABLE Tarjetas ADD CONSTRAINT FK_Tarjeta_FechaHoraTarjeta FOREIGN KEY(IDFechaHoraTarjeta) REFERENCES FechaHorasTarjetas(IDFechaHoraTarjeta) ON DELETE CASCADE;
 ALTER TABLE Tarjetas ADD CONSTRAINT FK_Tarjeta_Cajon FOREIGN KEY(IDCajon) REFERENCES Cajones(IDCajon) ON DELETE CASCADE;
 
 ALTER TABLE FechaHorasTarjetas ADD CONSTRAINT FK_FechaHora_Tarjeta FOREIGN KEY(IDTarjeta) REFERENCES Tarjetas(IDTarjeta) ON DELETE CASCADE;
@@ -825,9 +825,7 @@ UPDATE Tarjetas SET IDCajon = 248 WHERE IDTarjeta = 248;
 UPDATE Tarjetas SET IDCajon = 249 WHERE IDTarjeta = 249;
 UPDATE Tarjetas SET IDCajon = 250 WHERE IDTarjeta = 250;
 
-  
 INSERT INTO Precios (IDPrecio, precioHoraNormalCarro, precioHoraEspecialCarro, precioHoraNormalMoto, precioHoraEspecialMoto, precioTarjetaDañada, precioTarjetaExtraviada)
 VALUES (1, 10.50, 15.75, 8.25, 12.50, 50.00, 100.00);
 
-SELECT * FROM Tarjetas
 
