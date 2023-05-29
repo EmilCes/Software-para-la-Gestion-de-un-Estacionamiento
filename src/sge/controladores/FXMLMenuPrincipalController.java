@@ -7,7 +7,6 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
@@ -27,8 +26,6 @@ public class FXMLMenuPrincipalController implements Initializable {
     private Button btnTarjetas;
     @FXML
     private Button btnPrecios;
-    @FXML
-    private Button btnInfoMenuPrincipal;
 
 
     
@@ -102,12 +99,6 @@ public class FXMLMenuPrincipalController implements Initializable {
         Utilidades.centrarEscenario(escenarioBase);
         escenarioBase.setTitle("Inicio Sesíon");    
         escenarioBase.show();   
-    }
-
-    @FXML
-    private void clicBtnInfoMenuPrincipal(ActionEvent event) {
-        Utilidades.mostrarDialogoSimple("Empecemos¡", "Para comenzar a utilizar el sistema, "
-                + "selecciona una de las opciones que se encuentran en el lado izquierdo de la pantalla", Alert.AlertType.INFORMATION);
     }
     
 }
