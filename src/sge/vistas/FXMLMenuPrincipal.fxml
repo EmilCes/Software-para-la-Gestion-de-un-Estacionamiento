@@ -74,7 +74,39 @@
                <center>
                   <AnchorPane fx:id="apMenuPrincipal" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
                      <children>
-                        
+                        <Pane prefHeight="200.0" prefWidth="200.0" stylesheets="@css/FXMLMenuPrincipal.css" AnchorPane.bottomAnchor="25.0" AnchorPane.leftAnchor="25.0" AnchorPane.rightAnchor="25.0" AnchorPane.topAnchor="25.0">
+                           <children>
+                              <Pane layoutX="263.0" layoutY="37.0" prefHeight="110.0" prefWidth="405.0" style="-fx-background-color: #000000;" styleClass="estilo-pane" stylesheets="@css/FXMLConfigurarPrecios.css">
+                                 <children>
+                                    <Label layoutX="48.0" layoutY="13.0" text="Parking City" textFill="WHITE">
+                                       <font>
+                                          <Font size="60.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </Pane>
+                              <Text layoutX="255.0" layoutY="297.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Dentro del sistema podrás asignar espacios de vehiculos, administrar los cobros de las tarjetas, administrar las tarjetas del Parking, administrar las cuotas, entre muchas otras funciones." textAlignment="CENTER" wrappingWidth="427.2572021484375">
+                                 <font>
+                                    <Font size="17.0" />
+                                 </font>
+                              </Text>
+                              <Label layoutX="375.0" layoutY="210.0" text="¡Bienvenido!">
+                                 <font>
+                                    <Font size="37.0" />
+                                 </font>
+                              </Label>
+                              <Text fill="#979797" layoutX="91.0" layoutY="509.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Para mas informacion puede contactarnos al correo chanclas1234gamil.com ó marcar al número telefónico +55 2288997766  Copyright © 2023 ParkingCity and/or its affiliates. All rights reserved." textAlignment="CENTER" wrappingWidth="703.8457336425781" />
+                              <Button fx:id="btnInfoMenuPrincipal" layoutX="18.0" layoutY="17.0" mnemonicParsing="false" onAction="#clicBtnInfoMenuPrincipal" prefHeight="23.0" prefWidth="23.0" styleClass="info-btn" stylesheets="@css/FXMLConfigurarPrecios.css" text="?" textFill="#555b65">
+                                 <font>
+                                    <Font size="12.0" />
+                                 </font>
+                              </Button>
+                           </children>
+                           <styleClass>
+                              <String fx:value="shadow" />
+                              <String fx:value="white-bg" />
+                           </styleClass>
+                        </Pane>
                      </children>
                   </AnchorPane>
                </center>
