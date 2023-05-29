@@ -14,10 +14,6 @@
     -fx-background-color: linear-gradient(to bottom right, #272b3f, #16a1f7);
 }
 
-.wc-form{
-    -fx-background-color: linear-gradient(to bottom left, #272b3f, #16a1f7);
-}
-
 .nav-btn{
     -fx-background-color: transparent;
     -fx-cursor: hand;
