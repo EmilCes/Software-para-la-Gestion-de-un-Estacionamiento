@@ -21,12 +21,48 @@
     -fx-background-color: #16a1f7;
 }
 
-.btn-cancelar{
-    -fx-background-color: #f76045;
-    -fx-cursor: hand;
-    
+.estilo-tableView{
+    -fx-backgroun-raduis: 20px;
+    -fx-background-color: #c1e3f7;
+    -fx-border-color: #16a1f7;
+}
+.table-view .column-header .label{
+    -fx-text-fill: WHITE;
+    -fx-alignment: CENTER;
 }
 
-.btn-cancelar:hover{
-    -fx-background-color: #fc9e8d;
+.table-view .column-header, .table-view .filler {
+    -fx-background-color: #16a1f7;    
+    -fx-size: 35;
+    -fx-border-color: -fx-box-border;
+    -fx-border-width: 0 1 3 0;
+    -fx-border-insets: 0;
 }
+
+.table-view .column-header-background {
+    -fx-background-color: transparent;
+}
+
+.historial-btn{
+    -fx-background-color: #ffd342;
+    -fx-cursor: hand;
+}
+
+.historial-btn:hover{
+    -fx-background-color: #ffefba;
+}
+
+.estilo-tableColumn{
+    -fx-border-raduis: 8px;
+    -fx-border-color: #16a1f7;
+}
+
+.back-btn{
+    -fx-background-color: #16a1f7;
+    -fx-cursor: hand;
+}
+
+.back-btn:hover{
+    -fx-background-color: #5ec1ff;
+}
+
