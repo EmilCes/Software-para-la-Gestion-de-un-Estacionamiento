@@ -26,6 +26,8 @@ public class FXMLMenuPrincipalController implements Initializable {
     private Button btnTarjetas;
     @FXML
     private Button btnPrecios;
+    @FXML
+    private Button btnInfoMenuPrincipal;
 
 
     
@@ -99,6 +101,10 @@ public class FXMLMenuPrincipalController implements Initializable {
         Utilidades.centrarEscenario(escenarioBase);
         escenarioBase.setTitle("Inicio Sesíon");    
         escenarioBase.show();   
+    }
+
+    @FXML
+    private void clicBtnInfoMenuPrincipal(ActionEvent event) {
     }
     
 }
