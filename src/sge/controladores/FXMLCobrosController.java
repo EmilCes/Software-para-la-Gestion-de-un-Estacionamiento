@@ -95,6 +95,18 @@ public class FXMLCobrosController implements Initializable {
 
     @FXML
     private void clicBtnAñadirCargo(ActionEvent event) {
+        validarCargoExtra();
+    }
+
+    private void validarCargoExtra() {
+        String cargoExtraStr = tfCargoExtra.getText();
+        try {
+            float cargoExtra = Float.parseFloat(cargoExtraStr);
+            lbCargoExtra.setText(String.valueOf(cargoExtra));
+        } catch (NumberFormatException e) {
+            lbErrorCargoExtra.setText("Ingresar cantidad numerica");
+
+        }
     }
 
     private Tarjeta validarNumeroTarjeta() {
@@ -133,10 +145,9 @@ public class FXMLCobrosController implements Initializable {
             SimpleDateFormat formatoFechaHora = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.S");
             Date fechaHora = formatoFechaHora.parse(fechaHoraTarjeta.getFechaHoraEntrada());
 
-            
             SimpleDateFormat formatoFecha = new SimpleDateFormat("dd/MM/yyyy");
             SimpleDateFormat formatoHora = new SimpleDateFormat("HH:mm");
-            
+
             String fechaEntrada = formatoFecha.format(fechaHora);
             String horaEntrada = formatoHora.format(fechaHora);
 
@@ -167,11 +178,18 @@ public class FXMLCobrosController implements Initializable {
                 }
             }
         });
+        
+        tfCargoExtra.setOnKeyPressed((KeyEvent event) -> {
+            if (event.getCode() == KeyCode.ENTER) {
+                lbErrorCargoExtra.setText("");
+                validarCargoExtra();
+            }
+        });
 
     }
-    
-    public void calcularTotal(){
-        
+
+    public void calcularTotal() {
+
     }
 
 }
