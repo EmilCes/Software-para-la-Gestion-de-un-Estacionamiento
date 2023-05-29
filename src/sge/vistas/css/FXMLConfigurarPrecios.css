@@ -6,6 +6,7 @@
 .save-btn:hover{
     -fx-background-color: #5ec1ff;
 }
+
 .info-btn{
     -fx-background-radius: 30px;
     -fx-cursor: hand;
@@ -64,3 +65,4 @@
 .back-btn:hover{
     -fx-background-color: #5ec1ff;
 }
+
