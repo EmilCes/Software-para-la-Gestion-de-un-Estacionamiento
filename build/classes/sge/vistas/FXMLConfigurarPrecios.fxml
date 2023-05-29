@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.chart.*?>
 <?import de.jensd.fx.glyphs.fontawesome.*?>
 <?import javafx.scene.shape.*?>
 <?import javafx.scene.text.*?>
@@ -12,7 +13,12 @@
 
 <AnchorPane fx:id="apConfigurarPrecios" prefHeight="600.0" prefWidth="939.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sge.controladores.FXMLConfigurarPreciosController">
                            <children>
-                              <Pane fx:id="paneConfigurarPrecios" prefHeight="200.0" prefWidth="200.0" stylesheets="@css/FXMLMenuPrincipal.css" visible="false" AnchorPane.bottomAnchor="25.0" AnchorPane.leftAnchor="25.0" AnchorPane.rightAnchor="25.0" AnchorPane.topAnchor="75.0">
+      <Label layoutX="25.0" layoutY="14.0" text="Configuracion de Precios">
+         <font>
+            <Font size="48.0" />
+         </font>
+      </Label>
+                              <Pane fx:id="paneConfigurarPrecios" disable="true" prefHeight="200.0" prefWidth="200.0" stylesheets="@css/FXMLMenuPrincipal.css" visible="false" AnchorPane.bottomAnchor="25.0" AnchorPane.leftAnchor="25.0" AnchorPane.rightAnchor="25.0" AnchorPane.topAnchor="75.0">
                                  <styleClass>
                                     <String fx:value="shadow" />
                                     <String fx:value="white-bg" />
@@ -123,13 +129,9 @@
                   <Font size="19.0" />
                </font>
             </Label>
+            <Button fx:id="btnHistoial" layoutX="756.0" layoutY="28.0" mnemonicParsing="false" onAction="#clicBtnHistorial" prefHeight="27.0" prefWidth="104.0" styleClass="historial-btn" stylesheets="@css/FXMLConfigurarPrecios.css" text="Historial" textFill="WHITE" />
          </children>
                               </Pane>
-      <Label layoutX="25.0" layoutY="14.0" text="Configuracion de Precios">
-         <font>
-            <Font size="48.0" />
-         </font>
-      </Label>
       <Pane fx:id="paneContraseñaAdmin" layoutX="35.0" layoutY="85.0" prefHeight="200.0" prefWidth="200.0" stylesheets="@css/FXMLMenuPrincipal.css" AnchorPane.bottomAnchor="25.0" AnchorPane.leftAnchor="25.0" AnchorPane.rightAnchor="25.0" AnchorPane.topAnchor="75.0">
          <styleClass>
             <String fx:value="shadow" />
@@ -143,7 +145,7 @@
                </styleClass>
                <children>
                   <FontAwesomeIcon glyphName="LOCK" layoutX="119.0" layoutY="70.0" size="50" text="" />
-                  <PasswordField fx:id="tfContraseñaAdmin" layoutX="64.0" layoutY="121.0" promptText="Contraseña" style="-fx-background-color: tranparent; -fx-border-color: #5ec1ff; -fx-border-width: 0px 0px 2px 0px;" />
+                  <PasswordField fx:id="tfContraseñaAdmin" layoutX="64.0" layoutY="121.0" promptText="Contraseña" style="-fx-background-color: transparent; -fx-border-color: #5ec1ff; -fx-border-width: 0px 0px 2px 0px;" />
                   <FontAwesomeIcon glyphName="KEY" layoutX="24.0" layoutY="144.0" size="25" />
                   <Button layoutX="93.0" layoutY="189.0" mnemonicParsing="false" onAction="#btnClicEntrarAdmin" prefHeight="31.0" prefWidth="85.0" style="-fx-background-color: #050000;" styleClass="btn" stylesheets="@css/FXMLMenuPrincipal.css" text="Entrar" textFill="WHITE" />
                   <Button fx:id="btnInfoContraseñaAdmin" layoutX="11.0" layoutY="12.0" mnemonicParsing="false" onAction="#clicBtnInfoContraseñaAdmin" prefHeight="23.0" prefWidth="23.0" styleClass="info-btn" stylesheets="@css/FXMLConfigurarPrecios.css" text="?" textFill="#555b65">
@@ -154,6 +156,95 @@
                   <Label fx:id="lbErrorContraseñaAdmin" layoutX="60.0" layoutY="150.0" prefHeight="17.0" prefWidth="171.0" textFill="RED" />
                </children>
             </Pane>
+         </children>
+      </Pane>
+      <Pane fx:id="paneHistorialPrecios" disable="true" layoutX="112.0" layoutY="108.0" prefHeight="200.0" prefWidth="200.0" stylesheets="@css/FXMLMenuPrincipal.css" visible="false" AnchorPane.bottomAnchor="25.0" AnchorPane.leftAnchor="25.0" AnchorPane.rightAnchor="25.0" AnchorPane.topAnchor="75.0">
+         <styleClass>
+            <String fx:value="shadow" />
+            <String fx:value="white-bg" />
+         </styleClass>
+         <children>
+            <TableView fx:id="tvHistorialPrecios" layoutX="32.0" layoutY="77.0" prefHeight="369.0" prefWidth="825.0" styleClass="estilo-tableView" stylesheets="@css/FXMLConfigurarPrecios.css">
+              <columns>
+                <TableColumn fx:id="colIDPrecio" prefWidth="117.0" text="Numero de Cambio" />
+                <TableColumn fx:id="colHoraNormalCarro" prefWidth="117.0" text="Hora Normal Carros" />
+                  <TableColumn fx:id="colHoraEspecialCarro" minWidth="4.0" prefWidth="117.0" text="Hora Esp. Carros" />
+                  <TableColumn fx:id="colHoraNormalMoto" prefWidth="117.0" text="Hora Normal Motos" />
+                  <TableColumn fx:id="colHoraEspecialMoto" prefWidth="117.0" text="Hora Esp. Motos" />
+                  <TableColumn fx:id="colTarjetaDañada" prefWidth="117.0" text="Tarjeta Dañada" />
+                  <TableColumn fx:id="colTarjetaExtraviada" prefWidth="121.0" text="Tarjeta extraviada" />
+              </columns>
+            </TableView>
+            <Pane layoutX="212.0" layoutY="14.0" prefHeight="48.0" prefWidth="465.0" styleClass="estilo-pane" stylesheets="@css/FXMLConfigurarPrecios.css">
+               <children>
+                  <Label layoutX="113.0" layoutY="6.0" text="Historial de Precios" textFill="WHITE">
+                     <font>
+                        <Font size="30.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+            <Button fx:id="btnBack" layoutX="32.0" layoutY="25.0" mnemonicParsing="false" onAction="#clicBtnBack" prefHeight="27.0" prefWidth="29.0" styleClass="back-btn" stylesheets="@css/FXMLConfigurarPrecios.css">
+               <graphic>
+                  <FontAwesomeIcon fill="#fffdfd" glyphName="ARROW_LEFT" text="" />
+               </graphic>
+            </Button>
+         </children>
+      </Pane>
+      <Pane fx:id="paneGraficas" disable="true" layoutX="122.0" layoutY="118.0" prefHeight="200.0" prefWidth="200.0" stylesheets="@css/FXMLMenuPrincipal.css" visible="false" AnchorPane.bottomAnchor="25.0" AnchorPane.leftAnchor="25.0" AnchorPane.rightAnchor="25.0" AnchorPane.topAnchor="75.0">
+         <styleClass>
+            <String fx:value="shadow" />
+            <String fx:value="white-bg" />
+         </styleClass>
+         <children>
+            <LineChart fx:id="grafHoraNormalCarro" layoutX="18.0" prefHeight="203.0" prefWidth="271.0">
+              <xAxis>
+                <CategoryAxis side="BOTTOM" />
+              </xAxis>
+              <yAxis>
+                <NumberAxis side="LEFT" />
+              </yAxis>
+            </LineChart>
+            <LineChart fx:id="grafHoraNormalCarro" layoutY="297.0" prefHeight="203.0" prefWidth="271.0">
+               <xAxis>
+                  <CategoryAxis side="BOTTOM" />
+               </xAxis>
+               <yAxis>
+                  <NumberAxis side="LEFT" />
+               </yAxis>
+            </LineChart>
+            <LineChart fx:id="grafHoraNormalMoto" layoutX="309.0" prefHeight="203.0" prefWidth="271.0">
+               <xAxis>
+                  <CategoryAxis side="BOTTOM" />
+               </xAxis>
+               <yAxis>
+                  <NumberAxis side="LEFT" />
+               </yAxis>
+            </LineChart>
+            <LineChart fx:id="grafTarjetaExtraviada" layoutX="611.0" layoutY="297.0" prefHeight="203.0" prefWidth="271.0">
+               <xAxis>
+                  <CategoryAxis side="BOTTOM" />
+               </xAxis>
+               <yAxis>
+                  <NumberAxis side="LEFT" />
+               </yAxis>
+            </LineChart>
+            <LineChart fx:id="grafTarjetaDañada" layoutX="618.0" prefHeight="203.0" prefWidth="271.0">
+               <xAxis>
+                  <CategoryAxis side="BOTTOM" />
+               </xAxis>
+               <yAxis>
+                  <NumberAxis side="LEFT" />
+               </yAxis>
+            </LineChart>
+            <LineChart fx:id="grafHoraEspecialMoto" layoutX="309.0" layoutY="297.0" prefHeight="203.0" prefWidth="271.0">
+               <xAxis>
+                  <CategoryAxis side="BOTTOM" />
+               </xAxis>
+               <yAxis>
+                  <NumberAxis side="LEFT" />
+               </yAxis>
+            </LineChart>
          </children>
       </Pane>
                            </children>
