@@ -6,6 +6,7 @@
 .save-btn:hover{
     -fx-background-color: #5ec1ff;
 }
+
 .info-btn{
     -fx-background-radius: 30px;
     -fx-cursor: hand;
@@ -18,4 +19,14 @@
 .estilo-pane{
     -fx-background-radius: 8px;
     -fx-background-color: #16a1f7;
+}
+
+.btn-cancelar{
+    -fx-background-color: #f76045;
+    -fx-cursor: hand;
+    
+}
+
+.btn-cancelar:hover{
+    -fx-background-color: #fc9e8d;
 }

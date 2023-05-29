@@ -10,8 +10,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-
-<AnchorPane fx:id="apAdministrarCobros" prefHeight="600.0" prefWidth="939.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sge.controladores.FXMLCobrosController">
+<AnchorPane fx:id="apAdministrarCobros" prefHeight="600.0" prefWidth="939.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="sge.controladores.FXMLCobrosController">
     <children>
         <AnchorPane prefHeight="200.0" prefWidth="200.0" stylesheets="@css/FXMLMenuPrincipal.css" AnchorPane.bottomAnchor="25.0" AnchorPane.leftAnchor="25.0" AnchorPane.rightAnchor="25.0" AnchorPane.topAnchor="75.0">
             <styleClass>
@@ -24,7 +23,154 @@
                         <String fx:value="shadow" />
                         <String fx:value="ticket" />
                     </styleClass>
+               <children>
+                  <Label layoutX="135.0" layoutY="14.0" text="Ticket">
+                     <font>
+                        <Font size="36.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="52.0" layoutY="379.0" text="Total">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="300.0" layoutY="379.0" text="\$">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="lbTotal" layoutX="139.0" layoutY="379.0" text="250.55">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="40.0" layoutY="75.0" text="Costo Hora">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="40.0" layoutY="110.0" text="Numero Horas">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="40.0" layoutY="145.0" text="Total por Horas">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="40.0" layoutY="180.0" text="Multa">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="40.0" layoutY="215.0" text="Cargo Extra">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="lbCostoHora" layoutX="230.0" layoutY="75.0" text="32.25">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="lbNumeroHoras" layoutX="230.0" layoutY="110.0" text="32.25">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="lbTotalHoras" layoutX="230.0" layoutY="145.0" text="32.25">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="lbMulta" layoutX="230.0" layoutY="180.0" text="32.25">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="lbCargoExtra" layoutX="230.0" layoutY="215.0" text="32.25">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+               </children>
                 </Pane>
+            <TextField fx:id="tfNumeroTarjeta" layoutX="124.0" layoutY="262.0" promptText="Numero Tarjeta" />
+            <Pane layoutX="66.0" layoutY="-19.0" prefHeight="217.0" prefWidth="389.0" stylesheets="@css/FXMLCobros.css" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="450.0" AnchorPane.topAnchor="25.0">
+               <styleClass>
+                  <String fx:value="ticket" />
+                  <String fx:value="shadow" />
+               </styleClass>
+               <children>
+                  <Label fx:id="lbSinTarjeta" layoutX="141.0" layoutY="86.0">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="230.0" layoutY="65.0" text="Hora Entrada">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="45.0" layoutY="65.0" text="Fecha Entrada">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="235.0" layoutY="125.0" text="Hora Salida">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="50.0" layoutY="125.0" text="Fecha Salida">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Pane layoutX="34.0" layoutY="10.0" prefHeight="44.0" prefWidth="320.0" styleClass="estilo-pane" stylesheets="@css/FXMLCobros.css">
+                     <children>
+                        <Label layoutX="130.0" layoutY="10.0" text="Piso" textFill="WHITE">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="205.0" layoutY="10.0" text="Cajón" textFill="WHITE">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="lbPiso" layoutX="170.0" layoutY="10.0" text="1" textFill="WHITE">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="lbCajon" layoutX="255.0" layoutY="10.0" text="1" textFill="WHITE">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="lbTipoVehiculo" layoutX="31.0" layoutY="10.0" text="Automovil" textFill="WHITE">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </Pane>
+                  <Label fx:id="lbFechaEntrada" layoutX="65.0" layoutY="95.0" />
+                  <Label fx:id="lbHoraEntrada" layoutX="260.0" layoutY="95.0" />
+                  <Label fx:id="lbFechaSalida" layoutX="65.0" layoutY="155.0" text="28/05/2023" />
+                  <Label fx:id="lbHoraSalida" layoutX="260.0" layoutY="155.0" text="18:08" />
+               </children>
+            </Pane>
+            <Button layoutX="294.0" layoutY="262.0" mnemonicParsing="false" onAction="#clicBtnBuscarTarjeta" styleClass="save-btn" stylesheets="@css/FXMLCobros.css" text="Buscar" textFill="WHITE" />
+            <Button layoutX="155.0" layoutY="351.0" mnemonicParsing="false" onAction="#clicBtnCancelar" prefWidth="85.0" styleClass="btn-cancelar" stylesheets="@css/FXMLCobros.css" text="Cancelar" textFill="WHITE" AnchorPane.bottomAnchor="25.0" />
+            <Button layoutX="245.0" layoutY="448.0" mnemonicParsing="false" onAction="#clicBtnCobrar" prefWidth="85.0" styleClass="save-btn" stylesheets="@css/FXMLCobros.css" text="Cobrar" textFill="WHITE" AnchorPane.bottomAnchor="25.0" />
+            <TextField fx:id="tfCargoExtra" layoutX="124.0" layoutY="325.0" promptText="Cargo Extra" />
+            <CheckBox layoutX="130.0" layoutY="375.0" mnemonicParsing="false" text="¿Tarjeta extravíada o dañada?" />
+            <Button layoutX="294.0" layoutY="325.0" mnemonicParsing="false" onAction="#clicBtnAñadirCargo" styleClass="save-btn" stylesheets="@css/FXMLCobros.css" text="Añadir" textFill="WHITE" />
+            <Label fx:id="lbErrorNumeroTarjeta" layoutX="124.0" layoutY="289.0" textFill="RED" />
+            <Label fx:id="lbErrorCargoExtra" layoutX="124.0" layoutY="350.0" textFill="RED" />
             </children>
         </AnchorPane>
         <Label text="Administrar Cobro" AnchorPane.leftAnchor="25.0" AnchorPane.topAnchor="17.0">

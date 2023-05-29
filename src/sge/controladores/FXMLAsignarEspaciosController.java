@@ -102,7 +102,7 @@ public class FXMLAsignarEspaciosController implements Initializable {
         tarjeta.setEstadoTarjeta(Constantes.EN_USO);
         tarjeta.setIdFechaHoraTarjeta(FechaHoraTarjetaDAO.obtenerIdFechaHoraTarjeta());
         tarjeta.setIdTarjeta(numeroCajon);
-        System.out.println(TarjetaDAO.actualizarTarjeta(tarjeta));
+        TarjetaDAO.actualizarTarjeta(tarjeta);
     }
     
     private String obtenerFechaHoraActual(){

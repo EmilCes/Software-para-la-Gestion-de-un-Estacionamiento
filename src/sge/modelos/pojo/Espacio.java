@@ -5,22 +5,23 @@ public class Espacio {
     private int idCajon;
     private int numeroCajon;
     private int numeroPiso;
-    private String tipoVehiuclo;
+    private String tipoVehiculo;
     private String estadoEspacio;
     private int idTarjeta;
+    private int respuesta;
 
     public Espacio() {
     }
 
-    public Espacio(int idCajon, int numeroCajon, int numeroPiso, String tipoVehiuclo, String estadoEspacio, int idTarjeta) {
+    public Espacio(int idCajon, int numeroCajon, int numeroPiso, String tipoVehiculo, String estadoEspacio, int idTarjeta, int respuesta) {
         this.idCajon = idCajon;
         this.numeroCajon = numeroCajon;
         this.numeroPiso = numeroPiso;
-        this.tipoVehiuclo = tipoVehiuclo;
+        this.tipoVehiculo = tipoVehiculo;
         this.estadoEspacio = estadoEspacio;
         this.idTarjeta = idTarjeta;
+        this.respuesta = respuesta;
     }
-    
 
     public int getIdCajon() {
         return idCajon;
@@ -34,8 +35,8 @@ public class Espacio {
         return numeroPiso;
     }
 
-    public String getTipoVehiuclo() {
-        return tipoVehiuclo;
+    public String getTipoVehiculo() {
+        return tipoVehiculo;
     }
 
     public String getEstadoEspacio() {
@@ -44,6 +45,10 @@ public class Espacio {
 
     public int getIdTarjeta() {
         return idTarjeta;
+    }
+
+    public int getRespuesta() {
+        return respuesta;
     }
 
     public void setIdCajon(int idCajon) {
@@ -58,8 +63,8 @@ public class Espacio {
         this.numeroPiso = numeroPiso;
     }
 
-    public void setTipoVehiuclo(String tipoVehiuclo) {
-        this.tipoVehiuclo = tipoVehiuclo;
+    public void setTipoVehiculo(String tipoVehiculo) {
+        this.tipoVehiculo = tipoVehiculo;
     }
 
     public void setEstadoEspacio(String estadoEspacio) {
@@ -70,11 +75,8 @@ public class Espacio {
         this.idTarjeta = idTarjeta;
     }
 
-    @Override
-    public String toString() {
-        return "Espacio{" + "estadoEspacio=" + estadoEspacio + '}';
+    public void setRespuesta(int respuesta) {
+        this.respuesta = respuesta;
     }
-    
-    
-    
+
 }

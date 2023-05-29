@@ -31,7 +31,7 @@ public class EspacioDAO {
                     espacio.setIdCajon(resultado.getInt("IDCajon"));
                     espacio.setNumeroCajon(resultado.getInt("numeroCajon"));
                     espacio.setNumeroPiso(resultado.getInt("piso"));
-                    espacio.setTipoVehiuclo(resultado.getString("tipoVehiculo"));
+                    espacio.setTipoVehiculo(resultado.getString("tipoVehiculo"));
                     espacio.setIdTarjeta(resultado.getInt("IDTarjeta"));
                     espacio.setEstadoEspacio(resultado.getString("estado"));
                     espaciosConsulta.add(espacio);
@@ -67,6 +67,31 @@ public class EspacioDAO {
         } else{
             respuesta = Constantes.ERROR_CONEXION;
         }      
+        return respuesta;
+    }
+    
+    public static Espacio buscarEspacio(int idEspacio){
+        Espacio respuesta = new Espacio();
+        respuesta.setRespuesta(Constantes.OPERACION_EXITOSA);
+        Connection conexionBD = ConexionBD.abrirConexionBD();
+        if(conexionBD != null){
+            try {
+                String sentencia = "SELECT IDCajon, numeroCajon, piso, tipoVehiculo FROM Cajones WHERE IDCajon = ?";
+                PreparedStatement prepararSentencia = conexionBD.prepareStatement(sentencia);
+                prepararSentencia.setInt(1, idEspacio);
+                ResultSet resultado = prepararSentencia.executeQuery();
+                resultado.next();
+                respuesta.setIdCajon(resultado.getInt("IDCajon"));
+                respuesta.setNumeroCajon(resultado.getInt("numeroCajon"));
+                respuesta.setNumeroPiso(resultado.getInt("piso"));
+                respuesta.setTipoVehiculo(resultado.getString("tipoVehiculo"));
+                conexionBD.close();
+            } catch (SQLException e) {
+                respuesta.setRespuesta(Constantes.ERROR_CONSULTA);
+            }
+        } else{
+            respuesta.setRespuesta(Constantes.ERROR_CONEXION);
+        }
         return respuesta;
     }
     

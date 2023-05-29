@@ -8,15 +8,17 @@ public class Tarjeta {
     private String estadoTarjeta;
     private int idFechaHoraTarjeta;
     private int idCajon;
+    private int respuesta;
 
     public Tarjeta() {
     }
 
-    public Tarjeta(int idTarjeta, String estadoTarjeta, int idFechaHoraTarjeta, int idCajon) {
+    public Tarjeta(int idTarjeta, String estadoTarjeta, int idFechaHoraTarjeta, int idCajon, int respuesta) {
         this.idTarjeta = idTarjeta;
         this.estadoTarjeta = estadoTarjeta;
         this.idFechaHoraTarjeta = idFechaHoraTarjeta;
         this.idCajon = idCajon;
+        this.respuesta = respuesta;
     }
 
     public int getIdTarjeta() {
@@ -35,6 +37,10 @@ public class Tarjeta {
         return idCajon;
     }
 
+    public int getRespuesta() {
+        return respuesta;
+    }
+
     public void setIdTarjeta(int idTarjeta) {
         this.idTarjeta = idTarjeta;
     }
@@ -50,7 +56,9 @@ public class Tarjeta {
     public void setIdCajon(int idCajon) {
         this.idCajon = idCajon;
     }
-    
-    
-    
+
+    public void setRespuesta(int respuesta) {
+        this.respuesta = respuesta;
+    }
+ 
 }
