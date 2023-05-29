@@ -8,10 +8,7 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.chart.CategoryAxis;
 import javafx.scene.chart.LineChart;
-import javafx.scene.chart.NumberAxis;
-import javafx.scene.chart.XYChart;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -25,8 +22,10 @@ import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
 import sge.modelos.dao.ConfiguracionPreciosDAO;
+import sge.modelos.dao.InicioSesionDAO;
 import sge.modelos.pojo.ConfiguracionPrecios;
 import sge.modelos.pojo.ConfiguracionPreciosRespuesta;
+import sge.modelos.pojo.Usuario;
 import sge.utils.Constantes;
 import sge.utils.Utilidades;
 
@@ -249,7 +248,9 @@ public class FXMLConfigurarPreciosController implements Initializable {
 
     private void validarContraseñaAdmin() {
         String contraseñaAdmin = tfContraseñaAdmin.getText();
-        if (contraseñaAdmin.equals("123456")) {          
+        Usuario usuario = InicioSesionDAO.verificarAdminSesion(contraseñaAdmin);
+        
+        if (contraseñaAdmin.equals(usuario.getContraseña())) {          
             paneContraseñaAdmin.setDisable(true);
             paneContraseñaAdmin.setVisible(false);
             paneConfigurarPrecios.setDisable(false);
