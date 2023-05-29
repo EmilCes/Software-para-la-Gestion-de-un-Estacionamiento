@@ -102,7 +102,6 @@ public class FXMLInicioSesionController implements Initializable {
                     
                 break;
         }
-        System.out.println("Codigo: " + usuarioRespuesta.getCodigoRespuesta());
     }
         
     private void irMenuPrincipal(){
