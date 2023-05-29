@@ -150,12 +150,12 @@
                               <Font size="18.0" />
                            </font>
                         </Label>
-                        <Label fx:id="lbPiso" layoutX="170.0" layoutY="10.0" text="1" textFill="WHITE">
+                        <Label fx:id="lbPiso" layoutX="170.0" layoutY="10.0" textFill="WHITE">
                            <font>
                               <Font size="18.0" />
                            </font>
                         </Label>
-                        <Label fx:id="lbCajon" layoutX="255.0" layoutY="10.0" text="1" textFill="WHITE">
+                        <Label fx:id="lbCajon" layoutX="255.0" layoutY="10.0" textFill="WHITE">
                            <font>
                               <Font size="18.0" />
                            </font>
