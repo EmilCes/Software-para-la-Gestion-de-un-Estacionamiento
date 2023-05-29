@@ -10,7 +10,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane fx:id="apAdministrarCobros" prefHeight="600.0" prefWidth="939.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="sge.controladores.FXMLCobrosController">
+<AnchorPane fx:id="apAdministrarCobros" prefHeight="600.0" prefWidth="939.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sge.controladores.FXMLCobrosController">
     <children>
         <AnchorPane prefHeight="200.0" prefWidth="200.0" stylesheets="@css/FXMLMenuPrincipal.css" AnchorPane.bottomAnchor="25.0" AnchorPane.leftAnchor="25.0" AnchorPane.rightAnchor="25.0" AnchorPane.topAnchor="75.0">
             <styleClass>
@@ -39,7 +39,7 @@
                         <Font size="24.0" />
                      </font>
                   </Label>
-                  <Label fx:id="lbTotal" layoutX="139.0" layoutY="379.0" text="250.55">
+                  <Label fx:id="lbTotal" layoutX="139.0" layoutY="379.0" text="0.00">
                      <font>
                         <Font size="24.0" />
                      </font>
@@ -59,37 +59,47 @@
                         <Font size="18.0" />
                      </font>
                   </Label>
-                  <Label layoutX="40.0" layoutY="180.0" text="Multa">
+                  <Label layoutX="40.0" layoutY="180.0" text="Tarjeta Extraviada">
                      <font>
                         <Font size="18.0" />
                      </font>
                   </Label>
-                  <Label layoutX="40.0" layoutY="215.0" text="Cargo Extra">
+                  <Label layoutX="40.0" layoutY="215.0" text="Tarjeta Dañada">
                      <font>
                         <Font size="18.0" />
                      </font>
                   </Label>
-                  <Label fx:id="lbCostoHora" layoutX="230.0" layoutY="75.0" text="32.25">
+                  <Label fx:id="lbCostoHora" layoutX="230.0" layoutY="75.0" text="0.00">
                      <font>
                         <Font size="18.0" />
                      </font>
                   </Label>
-                  <Label fx:id="lbNumeroHoras" layoutX="230.0" layoutY="110.0" text="32.25">
+                  <Label fx:id="lbNumeroHoras" layoutX="230.0" layoutY="110.0" text="0.00">
                      <font>
                         <Font size="18.0" />
                      </font>
                   </Label>
-                  <Label fx:id="lbTotalHoras" layoutX="230.0" layoutY="145.0" text="32.25">
+                  <Label fx:id="lbTotalHoras" layoutX="230.0" layoutY="145.0" text="0.00">
                      <font>
                         <Font size="18.0" />
                      </font>
                   </Label>
-                  <Label fx:id="lbMulta" layoutX="230.0" layoutY="180.0" text="0.00">
+                  <Label fx:id="lbTarjetaExtraviada" layoutX="230.0" layoutY="180.0" text="0.00">
                      <font>
                         <Font size="18.0" />
                      </font>
                   </Label>
-                  <Label fx:id="lbCargoExtra" layoutX="230.0" layoutY="215.0" text="0.00">
+                  <Label fx:id="lbTarjetaDañada" layoutX="230.0" layoutY="215.0" text="0.00">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="40.0" layoutY="250.0" text="Cargo Extra">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="lbCargoExtra" layoutX="230.0" layoutY="250.0" text="0.00">
                      <font>
                         <Font size="18.0" />
                      </font>
@@ -167,10 +177,11 @@
             <Button layoutX="155.0" layoutY="351.0" mnemonicParsing="false" onAction="#clicBtnCancelar" prefWidth="85.0" styleClass="btn-cancelar" stylesheets="@css/FXMLCobros.css" text="Cancelar" textFill="WHITE" AnchorPane.bottomAnchor="25.0" />
             <Button layoutX="245.0" layoutY="448.0" mnemonicParsing="false" onAction="#clicBtnCobrar" prefWidth="85.0" styleClass="save-btn" stylesheets="@css/FXMLCobros.css" text="Cobrar" textFill="WHITE" AnchorPane.bottomAnchor="25.0" />
             <TextField fx:id="tfCargoExtra" layoutX="124.0" layoutY="325.0" promptText="Cargo Extra" />
-            <CheckBox layoutX="130.0" layoutY="375.0" mnemonicParsing="false" text="¿Tarjeta extravíada o dañada?" />
+            <CheckBox fx:id="chbExtraviada" layoutX="130.0" layoutY="375.0" mnemonicParsing="false" onMouseClicked="#clicTarjetaExtraviada" text="¿Tarjeta extravíada ?" />
             <Button layoutX="294.0" layoutY="325.0" mnemonicParsing="false" onAction="#clicBtnAñadirCargo" styleClass="save-btn" stylesheets="@css/FXMLCobros.css" text="Añadir" textFill="WHITE" />
             <Label fx:id="lbErrorNumeroTarjeta" layoutX="124.0" layoutY="289.0" textFill="RED" />
             <Label fx:id="lbErrorCargoExtra" layoutX="124.0" layoutY="350.0" textFill="RED" />
+            <CheckBox fx:id="chbDañada" layoutX="130.0" layoutY="400.0" mnemonicParsing="false" onMouseClicked="#clicTarjetaDañada" text="¿Tarjeta dañada ?" />
             </children>
         </AnchorPane>
         <Label text="Administrar Cobro" AnchorPane.leftAnchor="25.0" AnchorPane.topAnchor="17.0">
