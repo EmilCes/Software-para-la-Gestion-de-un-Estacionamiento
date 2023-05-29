@@ -36,8 +36,6 @@ public class FXMLAsignarEspaciosController implements Initializable {
     @FXML
     private Label lbNumeroCajon;
     @FXML
-    private Label lbHoraEntrada;
-    @FXML
     private Label lbFechaEntrada;
     @FXML
     private FontAwesomeIcon faIcon;
