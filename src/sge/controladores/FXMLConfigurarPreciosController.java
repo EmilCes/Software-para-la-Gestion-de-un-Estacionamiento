@@ -184,7 +184,7 @@ public class FXMLConfigurarPreciosController implements Initializable {
                 break;
             case Constantes.OPERACION_EXITOSA:
                 Utilidades.mostrarDialogoSimple("Alumno registrado", 
-                                                "La configuracion de precios del alumno fue guardada correctamente", 
+                                                "La configuracion de precios fue guardada correctamente", 
                                                 Alert.AlertType.INFORMATION);
                 break;
         }
