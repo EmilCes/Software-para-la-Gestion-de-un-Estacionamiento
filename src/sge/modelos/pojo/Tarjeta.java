@@ -60,5 +60,28 @@ public class Tarjeta {
     public void setRespuesta(int respuesta) {
         this.respuesta = respuesta;
     }
+
+    @Override
+    public boolean equals(Object obj) {
+    
+        if (obj == this) {
+            return true;
+        }
+ 
+      
+        if (!(obj instanceof Tarjeta)) {
+            return false;
+        }
+        
+        Tarjeta tarjeta = (Tarjeta) obj;
+        
+        if(tarjeta.getEstadoTarjeta().equals(this.getEstadoTarjeta()) && tarjeta.getIdCajon() == this.getIdCajon()){
+            return true;
+        }
+        return false;
+      
+    }
+    
+    
  
 }
