@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" fx:id="apAdministrarTarjetas" prefHeight="400.0" prefWidth="600.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sge.controladores.FXMLAdministrarTarjetasController">
+   <children>
+      <TextField fx:id="tfBuscarTarjeta" layoutX="120.0" layoutY="56.0" prefHeight="25.0" prefWidth="314.0" promptText="Ingrese el ID de una tarjeta..." />
+      <Button fx:id="btnBuscarTarjeta" layoutX="428.0" layoutY="56.0" mnemonicParsing="false" onAction="#buscarTarjetaPorID" text="Buscar" />
+      <Button fx:id="btnRegistrarTarjeta" layoutX="439.0" layoutY="361.0" mnemonicParsing="false" onAction="#registrarTarjeta" text="Registrar Nueva Tarjeta" />
+      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
+      <Text layoutX="183.0" layoutY="36.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Administración de Tarjetas">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Text>
+      <ScrollPane hbarPolicy="NEVER" layoutX="22.0" layoutY="98.0" prefHeight="249.0" prefWidth="557.0">
+        <content>
+            <VBox fx:id="vBoxListaTarjetas" prefHeight="249.0" prefWidth="557.0" />
+        </content>
+      </ScrollPane>
+      <Label fx:id="lAdvertencia" layoutX="120.0" layoutY="81.0" prefHeight="17.0" prefWidth="360.0" text="Label" textFill="RED" />
+   </children>
+</AnchorPane>

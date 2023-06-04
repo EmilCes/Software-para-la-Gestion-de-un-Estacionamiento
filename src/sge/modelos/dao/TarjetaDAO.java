@@ -4,12 +4,39 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.ArrayList;
 import sge.modelos.ConexionBD;
 import sge.modelos.pojo.Tarjeta;
 import sge.utils.Constantes;
 
 
 public class TarjetaDAO {
+    
+    public static ArrayList<Tarjeta> recuperarListaTarjetas() throws SQLException{
+        ArrayList<Tarjeta> listaTarjetas = new ArrayList();
+        
+        String query = "SELECT * FROM Tarjetas";
+        
+        try {
+            Statement sentencia = ConexionBD.abrirConexionBD().prepareStatement(query);
+            ResultSet resultados = sentencia.executeQuery(query);
+            
+            while(resultados.next()) {
+                Tarjeta tarjeta = new Tarjeta();
+                tarjeta.setIdTarjeta(resultados.getInt("IDTarjeta"));
+                tarjeta.setEstadoTarjeta(resultados.getString("Estado"));
+                tarjeta.setIdFechaHoraTarjeta(resultados.getInt("IDFechaHoraTarjeta"));
+                tarjeta.setIdCajon(resultados.getInt("IDCajon"));
+                
+                listaTarjetas.add(tarjeta);
+            }
+        } catch (SQLException excepcion) {
+            throw new SQLException(excepcion);
+        }
+        
+        return listaTarjetas;
+    }
     
     public static Tarjeta buscarTarjeta(int numeroTarjeta){
         Tarjeta respuesta = new Tarjeta();
