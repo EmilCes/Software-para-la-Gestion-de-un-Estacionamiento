@@ -106,7 +106,7 @@
                               <String fx:value="shadow" />
                               <String fx:value="white-bg" />
                            </styleClass>
-                        </Pane>
+                        </Pane>                 
                      </children>
                   </AnchorPane>
                </center>
