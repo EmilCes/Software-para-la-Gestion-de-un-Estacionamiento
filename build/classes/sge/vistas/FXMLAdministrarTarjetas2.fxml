@@ -18,6 +18,7 @@
                 <String fx:value="shadow" />
             </styleClass>
          <children>
+            <Button layoutX="574.0" layoutY="190.0" mnemonicParsing="false" onAction="#clicBtnCambiarPantalla" text="Button" />
             <TextField fx:id="tfBuscarTarjeta" layoutX="288.0" layoutY="30.0" prefHeight="25.0" prefWidth="314.0" promptText="Ingrese el ID de una tarjeta..." />
             <Button fx:id="btnBuscarTarjeta" layoutX="600.0" layoutY="30.0" mnemonicParsing="false" onAction="#buscarTarjetaPorID" text="Buscar" />
             <ScrollPane hbarPolicy="NEVER" layoutX="134.0" layoutY="116.0" prefHeight="300.0" prefWidth="622.0">
