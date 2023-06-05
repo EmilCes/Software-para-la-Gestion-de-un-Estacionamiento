@@ -36,8 +36,6 @@ public class FXMLAsignarEspaciosController implements Initializable {
     @FXML
     private Label lbNumeroCajon;
     @FXML
-    private Label lbHoraEntrada;
-    @FXML
     private Label lbFechaEntrada;
     @FXML
     private FontAwesomeIcon faIcon;
@@ -64,11 +62,14 @@ public class FXMLAsignarEspaciosController implements Initializable {
             faIcon.setLayoutX(45);
         }
         
+        obtenerNumeroCajon();
+        
         lbNumeroLugar.setText(numCajonUnDigito);
         lbNumeroPiso.setText(numPiso);
         lbNumeroTarjeta.setText(numTarjeta);
         lbNumeroCajon.setText(numCajonUnDigito);
         lbFechaEntrada.setText(fechaEntrada);
+        lbNumeroTarjeta.setText(String.valueOf(numeroCajon));
     }
 
 
@@ -90,7 +91,6 @@ public class FXMLAsignarEspaciosController implements Initializable {
     }
     
     private void asignarEspacio(){
-        obtenerNumeroCajon();
         String horaEntrada = obtenerFechaHoraActual();
         
         FechaHoraTarjeta fechaHoraTarjeta = new FechaHoraTarjeta();
@@ -128,6 +128,7 @@ public class FXMLAsignarEspaciosController implements Initializable {
                     numeroCajon += 200;
                     break;    
             }
+        System.out.println(numeroCajon);
     }
     
     private void regresarEspaciosDisponibles(){
