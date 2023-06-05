@@ -22,6 +22,8 @@ import sge.modelos.pojo.Tarjeta;
 
 public class FXMLAdministrarTarjetasController {
     private boolean estaBuscando = false;
+    private int numeroTarjetas;
+    
     private Stage stage;
     private Scene scene;
     private Parent parent;
@@ -36,9 +38,6 @@ public class FXMLAdministrarTarjetasController {
     private Button btnBuscarTarjeta;
 
     @FXML
-    private Button btnRegistrarTarjeta;
-
-    @FXML
     private VBox vBoxListaTarjetas;
     
     @FXML
@@ -50,7 +49,7 @@ public class FXMLAdministrarTarjetasController {
         
         try {
             ArrayList<Tarjeta> listaTarjetas = TarjetaDAO.recuperarListaTarjetas();
-            
+            numeroTarjetas = listaTarjetas.size();
             for (Tarjeta tarjeta : listaTarjetas) {
                 
                 FXMLLoader loader = new FXMLLoader(getClass().getResource("/sge/vistas/FXMLElementoListaTarjetas.fxml"));
@@ -73,6 +72,7 @@ public class FXMLAdministrarTarjetasController {
             errorMessage.setContentText(excepcion.getMessage());
             errorMessage.showAndWait();
         }
+        
     }
     
     @FXML
@@ -110,23 +110,14 @@ public class FXMLAdministrarTarjetasController {
         
     }
 
-    @FXML
-    void registrarTarjeta(ActionEvent event) { //TODO
-        try{
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/sge/vistas/FXMLRegistrarTarjeta.fxml"));
-            parent = loader.load();
-            FXMLRegistrarTarjetaController controller = (FXMLRegistrarTarjetaController)loader.getController();
-            
-            stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-            scene = new Scene(parent);
-            stage.setTitle("SPGER");
-            stage.setScene(scene);
-            stage.show();
-        }catch(IllegalStateException | IOException exception){
-            Alert errorMessage = new Alert(Alert.AlertType.ERROR);
-            errorMessage.setHeaderText("Error de carga");
-            errorMessage.setContentText("No se pudo abrir la ventana, verifique que el archivo .fxml esté en su ubicación correcta");
-            errorMessage.showAndWait();
+    public void cambiarPane(String path){
+        apAdministrarTarjetas.getChildren().clear();
+        try {
+            FXMLLoader menuPrincipalLoader = new FXMLLoader(getClass().getResource(path));
+            AnchorPane menuPrincipalPane = menuPrincipalLoader.load();
+            apAdministrarTarjetas.getChildren().add(menuPrincipalPane);
+        } catch (IOException ex) {
+            System.err.println(ex.getStackTrace());
         }
     }
 }
