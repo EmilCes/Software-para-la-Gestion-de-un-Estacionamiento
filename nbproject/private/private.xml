@@ -2,7 +2,6 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-<<<<<<< HEAD
         <group>
             <file>file:/C:/Users/Jesús%20Manuel/Desktop/SGE/src/sge/controladores/FXMLModificarTarjetaController.java</file>
             <file>file:/C:/Users/Jesús%20Manuel/Desktop/SGE/src/sge/controladores/FXMLConsultarTarjetaController.java</file>
@@ -12,8 +11,5 @@
             <file>file:/C:/Users/Jesús%20Manuel/Desktop/SGE/src/sge/controladores/FXMLAdministrarTarjetasController.java</file>
             <file>file:/C:/Users/Jesús%20Manuel/Desktop/SGE/src/sge/controladores/FXMLElementoListaTarjetasController.java</file>
         </group>
-=======
-        <group/>
->>>>>>> 6d8993400a56e9ddaf1d862a3c9984476bfcef8e
     </open-files>
 </project-private>

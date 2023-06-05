@@ -1,5 +1,6 @@
 package sge.modelos.dao;
 
+import java.util.ArrayList;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -29,6 +30,23 @@ public class TarjetaDAOTest {
     public void tearDown() {
     }
 
+@Test
+public void testBuscarTarjeta() {
+    int numeroTarjeta = 1;
+    Tarjeta expResult = new Tarjeta(1, "Sin Tarjeta", 21,1, 200);
+    Tarjeta result = TarjetaDAO.buscarTarjeta(numeroTarjeta);
+    assertEquals("Busca tarjeta por ID exitoso",expResult, result);
+}
+
+@Test
+public void testBuscarTarjetaErrorConsulta() {
+    int numeroTarjeta = -1;
+    int expResult = 501;
+    int result = TarjetaDAO.buscarTarjeta(numeroTarjeta).getRespuesta();
+    assertEquals("Busca tarjeta por ID error consulta",expResult, result);
+}
+
+
     @Test
     public void testActualizarTarjeta() {
         System.out.println("actualizarTarjeta");
@@ -40,20 +58,4 @@ public class TarjetaDAOTest {
         assertEquals(expResult, result);
     }
     
-    @Test
-    public void testBuscarTarjeta() {
-        int numeroTarjeta = 1;
-        Tarjeta expResult = new Tarjeta(1, "Sin Tarjeta", 21,1, 200);
-        Tarjeta result = TarjetaDAO.buscarTarjeta(numeroTarjeta);
-        assertEquals("Busca tarjeta por ID exitoso",expResult, result);
-    }
-    
-    @Test
-    public void testBuscarTarjetaErrorConsulta() {
-        int numeroTarjeta = -1;
-        int expResult = 501;
-        int result = TarjetaDAO.buscarTarjeta(numeroTarjeta).getRespuesta();
-        assertEquals("Busca tarjeta por ID error consulta",expResult, result);
-    }
-
 }
