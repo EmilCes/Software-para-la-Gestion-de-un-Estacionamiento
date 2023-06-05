@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sge.controladores.FXMLConsultarTarjetaController">
+   <children>
+      <Text layoutX="218.0" layoutY="51.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Detalles de Tarjeta">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Text>
+      <Label layoutX="91.0" layoutY="107.0" text="Número de Tarjeta:" />
+      <Label layoutX="156.0" layoutY="151.0" text="Estado:" />
+      <Label layoutX="158.0" layoutY="192.0" text="Precio:" />
+      <Label layoutX="159.0" layoutY="236.0" text="Cajón:" />
+      <Button fx:id="btnModificarTarjeta" layoutX="467.0" layoutY="350.0" mnemonicParsing="false" onAction="#modificarTarjeta" text="Modificar Tarjeta" />
+      <Button fx:id="btnConsultarHistorial" layoutX="243.0" layoutY="350.0" mnemonicParsing="false" onAction="#mostrarHistorial" text="Consultar Historial" />
+      <Label fx:id="lNumeroTarjeta" layoutX="218.0" layoutY="107.0" prefHeight="17.0" prefWidth="290.0" text="numero tarjeta" />
+      <Label fx:id="lEstado" layoutX="218.0" layoutY="151.0" prefHeight="17.0" prefWidth="290.0" text="estado" />
+      <Label fx:id="lPrecio" layoutX="218.0" layoutY="192.0" prefHeight="17.0" prefWidth="290.0" text="precio" />
+      <Label fx:id="lCajon" layoutX="218.0" layoutY="236.0" prefHeight="17.0" prefWidth="290.0" text="cajón" />
+   </children>
+</AnchorPane>
