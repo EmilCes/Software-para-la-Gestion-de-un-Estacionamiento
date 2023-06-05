@@ -29,7 +29,6 @@ public class TarjetaDAOTest {
     @After
     public void tearDown() {
     }
-
     /**
      * Test of recuperarListaTarjetas method, of class TarjetaDAO.
      */

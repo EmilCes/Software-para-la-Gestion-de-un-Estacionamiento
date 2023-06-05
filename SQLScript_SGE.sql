@@ -829,3 +829,7 @@ UPDATE Tarjetas SET IDCajon = 250 WHERE IDTarjeta = 250;
 INSERT INTO Precios (IDPrecio, precioHoraNormalCarro, precioHoraEspecialCarro, precioHoraNormalMoto, precioHoraEspecialMoto, precioTarjetaDañada, precioTarjetaExtraviada)
 VALUES (1, 10.50, 15.75, 8.25, 12.50, 50.00, 100.00);
 
+INSERT INTO Usuarios (nombreUsuario, contraseña) VALUES ('admin','123456');
+
+SELECT IDUsuario, nombreUsuario, contraseña FROM Usuarios WHERE nombreUsuario = '12' AND contraseña = '12'
+

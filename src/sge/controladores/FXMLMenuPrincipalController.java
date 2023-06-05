@@ -80,7 +80,7 @@ public class FXMLMenuPrincipalController implements Initializable {
         apMenuPrincipal.getChildren().clear();
         resetearEstiloBotones();
         btnTarjetas.setDisable(true);
-        cambiarPane("/sge/vistas/FXMLAdministrarTarjetas.fxml");      
+        cambiarPane("/sge/vistas/FXMLAdministrarTarjetas.fxml");
     }
 
     @FXML

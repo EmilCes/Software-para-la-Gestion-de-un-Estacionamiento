@@ -30,7 +30,23 @@ public class EspacioRespuesta {
     public void setEspacios(ArrayList<Espacio> espacios) {
         this.espacios = espacios;
     }
-    
-    
-    
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj == this) {
+            return true;
+        }
+ 
+      
+        if (!(obj instanceof EspacioRespuesta)) {
+            return false;
+        }
+        
+        EspacioRespuesta espacioRespuesta = (EspacioRespuesta) obj;
+        
+        if(espacioRespuesta.getCodigoRespuesta() == this.getCodigoRespuesta()){
+            return true;
+        }
+        return false;
+    } 
 }

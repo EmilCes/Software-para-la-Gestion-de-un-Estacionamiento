@@ -13,10 +13,8 @@ public class FechaHoraTarjeta {
     public FechaHoraTarjeta() {
     }
 
-    public FechaHoraTarjeta(String fechaHoraEntrada, String fechaHoraSalida, int IDTarjeta, int IDFechaHoraTarjeta, int respuesta) {
+    public FechaHoraTarjeta(String fechaHoraEntrada, int IDFechaHoraTarjeta, int respuesta) {
         this.fechaHoraEntrada = fechaHoraEntrada;
-        this.fechaHoraSalida = fechaHoraSalida;
-        this.IDTarjeta = IDTarjeta;
         this.IDFechaHoraTarjeta = IDFechaHoraTarjeta;
         this.respuesta = respuesta;
     }
@@ -60,5 +58,25 @@ public class FechaHoraTarjeta {
     public void setRespuesta(int respuesta) {
         this.respuesta = respuesta;
     }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj == this) {
+            return true;
+        }
+ 
+      
+        if (!(obj instanceof FechaHoraTarjeta)) {
+            return false;
+        }
+        
+        FechaHoraTarjeta fechaHoraTarjeta = (FechaHoraTarjeta) obj;
+        
+        return fechaHoraTarjeta.getFechaHoraEntrada().equals(this.getFechaHoraEntrada()) && 
+                fechaHoraTarjeta.getIDFechaHoraTarjeta()== this.getIDFechaHoraTarjeta() &&
+                fechaHoraTarjeta.respuesta == this.respuesta;
+    }
+    
+    
     
 }
