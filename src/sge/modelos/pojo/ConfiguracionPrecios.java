@@ -101,9 +101,25 @@ public class ConfiguracionPrecios {
     public void setRespuesta(int respuesta) {
         this.respuesta = respuesta;
     }
-  
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj == this){
+            return true;
+        }
+        
+        if (!(obj instanceof ConfiguracionPrecios)){
+            return false;
+        }
+        
+        ConfiguracionPrecios configuracionPrecios = (ConfiguracionPrecios) obj;
+        if(configuracionPrecios.getRespuesta() == (this.getRespuesta())){
+            return true;
+        }
+        return false;
+    }
     
-  
+    
  
     
 }
