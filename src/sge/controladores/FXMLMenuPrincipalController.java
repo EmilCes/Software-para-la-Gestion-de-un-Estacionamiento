@@ -36,13 +36,15 @@ public class FXMLMenuPrincipalController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
     }    
     
-    private void cambiarPane(String path){
+    public void cambiarPane(String path){
         try {
             FXMLLoader menuPrincipalLoader = new FXMLLoader(getClass().getResource(path));
             AnchorPane menuPrincipalPane = menuPrincipalLoader.load();
             apMenuPrincipal.getChildren().add(menuPrincipalPane);
         } catch (IOException ex) {
             System.err.println(ex.getStackTrace());
+            ex.printStackTrace();
+            System.err.println(ex.getMessage());
         }
     }
     
