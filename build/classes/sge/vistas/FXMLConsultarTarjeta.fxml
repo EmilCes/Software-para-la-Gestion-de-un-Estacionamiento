@@ -1,27 +1,69 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.String?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
-<?import javafx.scene.text.Text?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sge.controladores.FXMLConsultarTarjetaController">
-   <children>
-      <Text layoutX="218.0" layoutY="51.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Detalles de Tarjeta">
-         <font>
-            <Font size="20.0" />
-         </font>
-      </Text>
-      <Label layoutX="91.0" layoutY="107.0" text="Número de Tarjeta:" />
-      <Label layoutX="156.0" layoutY="151.0" text="Estado:" />
-      <Label layoutX="158.0" layoutY="192.0" text="Precio:" />
-      <Label layoutX="159.0" layoutY="236.0" text="Cajón:" />
-      <Button fx:id="btnModificarTarjeta" layoutX="467.0" layoutY="350.0" mnemonicParsing="false" onAction="#modificarTarjeta" text="Modificar Tarjeta" />
-      <Button fx:id="btnConsultarHistorial" layoutX="243.0" layoutY="350.0" mnemonicParsing="false" onAction="#mostrarHistorial" text="Consultar Historial" />
-      <Label fx:id="lNumeroTarjeta" layoutX="218.0" layoutY="107.0" prefHeight="17.0" prefWidth="290.0" text="numero tarjeta" />
-      <Label fx:id="lEstado" layoutX="218.0" layoutY="151.0" prefHeight="17.0" prefWidth="290.0" text="estado" />
-      <Label fx:id="lPrecio" layoutX="218.0" layoutY="192.0" prefHeight="17.0" prefWidth="290.0" text="precio" />
-      <Label fx:id="lCajon" layoutX="218.0" layoutY="236.0" prefHeight="17.0" prefWidth="290.0" text="cajón" />
-   </children>
+<AnchorPane fx:id="apConsultarTarjetas" prefHeight="600.0" prefWidth="939.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sge.controladores.FXMLConsultarTarjetaController">
+    <children>
+        <Pane fx:id="pnConsultarTarjetas" prefHeight="600.0" prefWidth="939.0" stylesheets="@css/FXMLMenuPrincipal.css" AnchorPane.bottomAnchor="25.0" AnchorPane.leftAnchor="25.0" AnchorPane.rightAnchor="25.0" AnchorPane.topAnchor="75.0">
+            <styleClass>
+                <String fx:value="white-bg" />
+                <String fx:value="shadow" />
+            </styleClass>
+         <children>
+            <Button fx:id="btnModificarTarjeta" layoutX="765.0" layoutY="454.0" mnemonicParsing="false" onAction="#modificarTarjeta" text="Modificar Tarjeta" />
+            <Button fx:id="btnConsultarHistorial" layoutX="388.0" layoutY="454.0" mnemonicParsing="false" onAction="#mostrarHistorial" text="Consultar Historial" />
+            <Label fx:id="lEstado" layoutX="445.0" layoutY="153.0" prefHeight="17.0" prefWidth="290.0" text="estado">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Label>
+            <Label fx:id="lPrecio" layoutX="445.0" layoutY="213.0" prefHeight="17.0" prefWidth="290.0" text="precio">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Label>
+            <Label fx:id="lCajon" layoutX="445.0" layoutY="280.0" prefHeight="17.0" prefWidth="290.0" text="cajón">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Label>
+            <Label layoutX="373.0" layoutY="153.0" text="Estado:">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Label>
+            <Label layoutX="375.0" layoutY="213.0" text="Precio:">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Label>
+            <Label layoutX="383.0" layoutY="280.0" text="Cajón:">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Label>
+            <Label layoutX="264.0" layoutY="93.0" text="Número de Tarjeta:">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Label>
+            <Label fx:id="lNumeroTarjeta" layoutX="445.0" layoutY="93.0" prefHeight="17.0" prefWidth="290.0" text="numero tarjeta">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Label>
+            <Button fx:id="btnRegresarMenú" layoutX="639.0" layoutY="454.0" mnemonicParsing="false" onAction="#regresarAMenú" text="Volver al Menú" />
+         </children>
+        </Pane>
+        <Label layoutX="46.0" layoutY="14.0" text="Detalles de Tarjeta" AnchorPane.leftAnchor="25.0">
+            <font>
+                <Font size="48.0" />
+            </font>
+        </Label>
+    </children>
 </AnchorPane>
