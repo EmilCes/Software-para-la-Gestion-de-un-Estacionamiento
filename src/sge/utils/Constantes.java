@@ -16,5 +16,5 @@ public class Constantes {
     public static final String EN_USO = "En Uso";
     public static final String DISPONIBLE = "Disponible";
     public static final String SIN_TARJETA = "Sin Tarjeta";
-   
+    public static final String PERDIDA = "Perdida";
 }
