@@ -1,6 +1,5 @@
 package sge.modelos.dao;
 
-import java.util.ArrayList;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -30,36 +29,6 @@ public class TarjetaDAOTest {
     public void tearDown() {
     }
 
-    /**
-     * Test of recuperarListaTarjetas method, of class TarjetaDAO.
-     */
-    @Test
-    public void testRecuperarListaTarjetas() throws Exception {
-        System.out.println("recuperarListaTarjetas");
-        ArrayList<Tarjeta> expResult = null;
-        ArrayList<Tarjeta> result = TarjetaDAO.recuperarListaTarjetas();
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
-
-    /**
-     * Test of buscarTarjeta method, of class TarjetaDAO.
-     */
-    @Test
-    public void testBuscarTarjeta() {
-        System.out.println("buscarTarjeta");
-        int numeroTarjeta = 0;
-        Tarjeta expResult = null;
-        Tarjeta result = TarjetaDAO.buscarTarjeta(numeroTarjeta);
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
-
-    /**
-     * Test of actualizarTarjeta method, of class TarjetaDAO.
-     */
     @Test
     public void testActualizarTarjeta() {
         System.out.println("actualizarTarjeta");
@@ -71,4 +40,20 @@ public class TarjetaDAOTest {
         assertEquals(expResult, result);
     }
     
+    @Test
+    public void testBuscarTarjeta() {
+        int numeroTarjeta = 1;
+        Tarjeta expResult = new Tarjeta(1, "Sin Tarjeta", 21,1, 200);
+        Tarjeta result = TarjetaDAO.buscarTarjeta(numeroTarjeta);
+        assertEquals("Busca tarjeta por ID exitoso",expResult, result);
+    }
+    
+    @Test
+    public void testBuscarTarjetaErrorConsulta() {
+        int numeroTarjeta = -1;
+        int expResult = 501;
+        int result = TarjetaDAO.buscarTarjeta(numeroTarjeta).getRespuesta();
+        assertEquals("Busca tarjeta por ID error consulta",expResult, result);
+    }
+
 }

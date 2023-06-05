@@ -1,5 +1,6 @@
 package sge.controladores;
 
+import com.sun.beans.TypeResolver;
 import java.net.URL;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -27,6 +28,7 @@ import sge.modelos.pojo.ConfiguracionPrecios;
 import sge.modelos.pojo.Espacio;
 import sge.modelos.pojo.FechaHoraTarjeta;
 import sge.modelos.pojo.Tarjeta;
+import sge.utils.Constantes;
 import sge.utils.Utilidades;
 
 public class FXMLCobrosController implements Initializable {
@@ -99,12 +101,55 @@ public class FXMLCobrosController implements Initializable {
 
     }
 
+    private void resetearCobros() {
+        lbFechaEntrada.setText("");
+        lbFechaSalida.setText("");
+        lbHoraEntrada.setText("");
+        lbHoraSalida.setText("");
+        lbPiso.setText("");
+        lbTipoVehiculo.setText("");
+        lbCajon.setText("");
+        lbCostoHora.setText("0.00");
+        lbNumeroHoras.setText("0");
+        lbTotalHoras.setText("0.00");
+        lbTarjetaDañada.setText("0.00");
+        lbTarjetaExtraviada.setText("0.00");
+        lbCargoExtra.setText("0.00");
+        lbTotal.setText("0.00");
+        tfNumeroTarjeta.clear();
+        tfCargoExtra.clear();
+    }
+
+    private void cobrar() {
+        if (!lbTotal.getText().equals("0.00")) {
+            Tarjeta tarjeta = new Tarjeta();
+            if (chbExtraviada.isSelected())
+                tarjeta.setEstadoTarjeta(Constantes.SIN_TARJETA);
+            else
+                tarjeta.setEstadoTarjeta(Constantes.DISPONIBLE);
+            tarjeta.setIdTarjeta(Integer.parseInt(tfNumeroTarjeta.getText()));
+            TarjetaDAO.actualizarTarjetaDisponible(tarjeta);
+
+            Utilidades.mostrarDialogoSimple("Cobro",
+                    "Cobro realizado correctamente.",
+                    Alert.AlertType.INFORMATION);
+            resetearCobros();
+        } else{
+            Utilidades.mostrarDialogoSimple("Error Cobro",
+                    "Ingresa el numero de tarjeta a búscar.",
+                    Alert.AlertType.ERROR);
+        }
+
+    }
+
     @FXML
     private void clicBtnCancelar(ActionEvent event) {
+        resetearCobros();
     }
 
     @FXML
     private void clicBtnCobrar(ActionEvent event) {
+        cobrar();
     }
 
     @FXML
@@ -156,7 +201,7 @@ public class FXMLCobrosController implements Initializable {
 
             Espacio espacio = EspacioDAO.buscarEspacio(tarjeta.getIdCajon());
             FechaHoraTarjeta fechaHoraTarjeta = FechaHoraTarjetaDAO.buscarFechaHoraTarjeta(tarjeta.getIdFechaHoraTarjeta());
-            
+
             fechaHoraEntrada = fechaHoraTarjeta.getFechaHoraEntrada();
             SimpleDateFormat formatoFechaHora = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.S");
             Date fechaHora = formatoFechaHora.parse(fechaHoraEntrada);
@@ -176,7 +221,7 @@ public class FXMLCobrosController implements Initializable {
             calcularFechaHoraSalida();
             cargarInformacionTicket();
             calcularTotal();
-            
+
         } else {
             Utilidades.mostrarDialogoSimple("Error Tarjeta",
                     "La tarjeta que búsca no esta en uso.", Alert.AlertType.INFORMATION);
@@ -207,25 +252,27 @@ public class FXMLCobrosController implements Initializable {
         });
 
     }
-    
-    private void cargarInformacionTicket(){
+
+    private void cargarInformacionTicket() {
         long horas = calcularCostoHoras();
         lbNumeroHoras.setText(String.valueOf(horas));
-        
-        if(lbTipoVehiculo.getText().equals("Automovil")){
-            if(horas > 12)
+
+        if (lbTipoVehiculo.getText().equals("Automovil")) {
+            if (horas > 12) {
                 lbCostoHora.setText(String.valueOf(precios.getPrecioHoraEspecialCarro()));
-            else
+            } else {
                 lbCostoHora.setText(String.valueOf(precios.getPrecioHoraNormalCarro()));
-        } else{
-            if(horas > 12)
+            }
+        } else {
+            if (horas > 12) {
                 lbCostoHora.setText(String.valueOf(precios.getPrecioHoraEspecialMoto()));
-            else
+            } else {
                 lbCostoHora.setText(String.valueOf(precios.getPrecioHoraNormalMoto()));
+            }
         }
-        
+
         costoTotalHoras = Float.parseFloat(lbCostoHora.getText()) * Float.parseFloat(lbNumeroHoras.getText());
-        
+
         lbTotalHoras.setText(String.valueOf(costoTotalHoras));
     }
 
@@ -237,24 +284,24 @@ public class FXMLCobrosController implements Initializable {
 
         lbTotal.setText(String.valueOf(costoTotal));
     }
-    
-    private long calcularCostoHoras(){
+
+    private long calcularCostoHoras() {
         DateTimeFormatter formato = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss.S");
         LocalDateTime fecha1 = LocalDateTime.parse(fechaHoraEntrada, formato);
         LocalDateTime fecha2 = LocalDateTime.parse(fechaHoraSalida, formato);
         Duration diferencia = Duration.between(fecha1, fecha2);
         long horas = diferencia.toHours();
         return horas;
-        
+
     }
 
     private void calcularFechaHoraSalida() throws ParseException {
         String formatoFechaHora = "yyyy-MM-dd HH:mm:ss.S";
         String fechaHoraStr = obtenerFechaHoraActual();
-        
+
         DateTimeFormatter formateadorEntrada = DateTimeFormatter.ofPattern(formatoFechaHora);
         LocalDateTime fechaHora = LocalDateTime.parse(fechaHoraStr, formateadorEntrada);
-        
+
         String formatoFecha = "dd/MM/yyyy";
         String formatoHora = "HH:mm";
 
@@ -262,7 +309,7 @@ public class FXMLCobrosController implements Initializable {
         DateTimeFormatter formateadorHora = DateTimeFormatter.ofPattern(formatoHora);
         String fechaSalida = fechaHora.format(formateadorFecha);
         String horaSalida = fechaHora.format(formateadorHora);
-              
+
         lbFechaSalida.setText(fechaSalida);
         lbHoraSalida.setText(horaSalida);
     }

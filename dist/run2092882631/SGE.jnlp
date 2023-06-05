@@ -8,16 +8,9 @@
   </information>
   <resources>
     <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
-<<<<<<< HEAD
-    <jar href="SGE.jar" size="68664" download="eager" />
-    <jar href="lib\fontawesomefx-8.2-sources.jar" size="149580" download="eager" />
-    <jar href="lib\fontawesomefx-8.2.jar" size="180341" download="eager" />
-    <jar href="lib\mysql-connector-java-5.1.49.jar" size="1006904" download="eager" />
-=======
     <jar href="SGE.jar" size="60988" download="eager" />
     <jar href="lib/fontawesomefx-8.2.jar" size="180341" download="eager" />
     <jar href="lib/mysql-connector-java-5.1.49.jar" size="1006904" download="eager" />
->>>>>>> 6d8993400a56e9ddaf1d862a3c9984476bfcef8e
   </resources>
   <jfx:javafx-desc  width="800" height="600" main-class="sge.SGE"  name="SGE" />
   <update check="always"/>

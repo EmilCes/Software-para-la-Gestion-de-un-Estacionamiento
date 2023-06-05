@@ -186,9 +186,11 @@ public class FXMLEspaciosController implements Initializable {
             switch (espacios.get(numeroEspacio).getEstadoEspacio()) {
                 case "En Uso":
                     espacio.setStyle("-fx-background-color: #f76045;");
+                    espacio.setDisable(true);
                     break;
                 case "Sin Tarjeta":
                     espacio.setStyle("-fx-background-color: #a7ad2d;");
+                    espacio.setDisable(true);
                     break;
             }
         }

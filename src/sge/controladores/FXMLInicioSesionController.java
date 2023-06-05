@@ -3,15 +3,18 @@ package sge.controladores;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.stage.Stage;
+import sge.modelos.dao.InicioSesionDAO;
+import sge.modelos.pojo.Usuario;
+import sge.utils.Constantes;
 import sge.utils.Utilidades;
 
 
@@ -71,13 +74,12 @@ public class FXMLInicioSesionController implements Initializable {
             lbErrorPassword.setText("Contraseña Incorrecta");
         }
         if(sonValidos){
-            irMenuPrincipal();
-            //validarCredencialesUsuario(usuario, password);
+            validarCredencialesUsuario(usuario, password);
         }
     }
     
-    /*private void validarCredencialesUsuario(String usuario, String password){
-        Usuario usuarioRespuesta = SesionDAO.verificarUsuarioSesion(usuario, password);
+    private void validarCredencialesUsuario(String usuario, String password){
+        Usuario usuarioRespuesta = InicioSesionDAO.verificarUsuarioSesion(usuario, password);
         switch (usuarioRespuesta.getCodigoRespuesta()) {
             case Constantes.ERROR_CONEXION:
                 Utilidades.mostrarDialogoSimple("Error de conexión", 
@@ -99,14 +101,8 @@ public class FXMLInicioSesionController implements Initializable {
                 }
                     
                 break;
-            default:
-                Utilidades.mostrarDialogoSimple("Error de petición", 
-                                               "El sistema no esta disponible por el momento.", 
-                                                Alert.AlertType.ERROR);
-                throw new AssertionError();
         }
-        System.out.println("Codigo: " + usuarioRespuesta.getCodigoRespuesta());
-    }*/
+    }
         
     private void irMenuPrincipal(){
         Stage escenarioBase = (Stage) tfUsuario.getScene().getWindow();
