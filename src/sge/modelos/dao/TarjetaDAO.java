@@ -5,6 +5,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.sql.Types;
 import java.util.ArrayList;
 import sge.modelos.ConexionBD;
 import sge.modelos.pojo.Tarjeta;
@@ -71,7 +72,11 @@ public class TarjetaDAO {
                 String sentencia = "UPDATE Tarjetas SET estado = ?, IDFechaHoraTarjeta = ? WHERE IDTarjeta = ?";
                 PreparedStatement prepararSentencia = conexionBD.prepareStatement(sentencia);
                 prepararSentencia.setString(1, tarjeta.getEstadoTarjeta());
-                prepararSentencia.setInt(2, tarjeta.getIdFechaHoraTarjeta());
+                if (tarjeta.getIdFechaHoraTarjeta() > 0) {
+                    prepararSentencia.setInt(2, tarjeta.getIdFechaHoraTarjeta());
+                } else {
+                    prepararSentencia.setNull(2, Types.INTEGER);
+                }
                 prepararSentencia.setInt(3, tarjeta.getIdTarjeta());
                 int filasAfectadas = prepararSentencia.executeUpdate();
                 respuesta = (filasAfectadas == 1) ? Constantes.OPERACION_EXITOSA : Constantes.ERROR_CONSULTA;
@@ -105,5 +110,4 @@ public class TarjetaDAO {
         }
         return respuesta;
     }
-    
 }
